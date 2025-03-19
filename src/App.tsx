@@ -37,7 +37,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Shaina Zaccagnino, Axel Rodriguez-Leon
+          Shaina Zaccagnino, Axel Rodriguez-Leon Alexander Chambers
         </a>
       </header>
       <Form>
