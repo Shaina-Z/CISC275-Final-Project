@@ -4,7 +4,7 @@ import './App.css';
 import { Button, Form } from 'react-bootstrap';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
-let keyData = "";
+let keyData = "$OPENAI_API_KEY";
 const saveKeyData = "MYKEY";
 const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
 if (prevKey !== null) {
