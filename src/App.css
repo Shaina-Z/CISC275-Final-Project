@@ -28,6 +28,15 @@
   color: #61dafb;
 }
 
+.Questions {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
