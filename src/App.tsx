@@ -30,10 +30,11 @@ function App() {
         </p>
       <header className="App-header">
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Career Helpi
         </p>
         <header className ="Questions">
-        <p>blank text</p> <p> blank text</p>
+        <p>Not sure where to start? Answer a few small questions to get some starting points.</p> 
+        <p> Have a few ideas of what you want? Take this quiz to help narrow it down!</p>
        </header>
       </header>
       <Form>

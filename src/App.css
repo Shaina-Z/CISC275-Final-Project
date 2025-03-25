@@ -33,6 +33,7 @@
   display: flex;
   gap:100px;
   flex-direction: row;
+  flex-wrap:wrap;
   align-items: center;
   justify-content: center;
   align-content: space-around;
