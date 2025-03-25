@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 
@@ -26,19 +25,17 @@ function App() {
   }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+      <p>
+          Shaina Zaccagnino, Axel Rodriguez-Leon, Alexander Chambers
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Shaina Zaccagnino, Axel Rodriguez-Leon Alexander Chambers
-        </a>
+      <header className="App-header">
+        <p>
+          Career Helpi
+        </p>
+        <header className ="Questions">
+        <p className ="basic">Not sure where to start? Answer a few small questions to get some starting points.</p> 
+        <p className ="detailed"> Have a few ideas of what you want? Take this quiz to help narrow it down!</p>
+       </header>
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
