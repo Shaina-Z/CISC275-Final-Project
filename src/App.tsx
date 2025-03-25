@@ -33,8 +33,8 @@ function App() {
           Career Helpi
         </p>
         <header className ="Questions">
-        <p>Not sure where to start? Answer a few small questions to get some starting points.</p> 
-        <p> Have a few ideas of what you want? Take this quiz to help narrow it down!</p>
+        <p className ="basic">Not sure where to start? Answer a few small questions to get some starting points.</p> 
+        <p className ="detailed"> Have a few ideas of what you want? Take this quiz to help narrow it down!</p>
        </header>
       </header>
       <Form>

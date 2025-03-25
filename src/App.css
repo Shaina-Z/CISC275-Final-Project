@@ -40,6 +40,17 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.basic{
+  text-wrap:balance;
+  padding:25px;
+  border-style: solid;
+}
+.detailed{
+  text-wrap:balance;
+  padding:25px;
+  border-style: solid;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
