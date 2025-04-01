@@ -27,13 +27,14 @@ interface PageProps{
     answers: string[];
 }
 
-export function BasicQuestions(props: PageProps): React.JSX.Element{
+export function BasicQuestions(): React.JSX.Element{
     const [page, setPage] = useState<string>("");
     const [answer1, setAnswer1] = useState<string>(Q1ANSWER[0]);
     const [answer2, setAnswer2] = useState<string>(Q2ANSWER[0]);
     const [answer3, setAnswer3] = useState<string>(Q3ANSWER[0]);
     
     return(
+        
         <span>  
                 <div className = "Basic-Questions">
                     <h3>Question 1</h3>
