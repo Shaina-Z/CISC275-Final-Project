@@ -39,7 +39,7 @@ function App(): React.JSX.Element {
         <p>Shaina Zaccagnino, Axel Rodriguez-Leon, Alexander Chambers</p>
         <header className="App-header">
           <p>Career Helpi</p>
-          <Button //Flips the visibility of the Basic and Home pages
+          <Button //Renders Home Page and hides Detailed and/or Basic Questions pages
               onClick={() => {
                 if (!notBasic){
                   setBasic(!notBasic);
