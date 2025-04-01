@@ -14,6 +14,7 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
+  const [mode,setMode]=useState<string>("homepage");
   
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -25,11 +26,16 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
+
+  function changeMode(mode:string){
+    setMode(mode);
+  }
   return (
-    <div className="App" hidden={false}>
+    <div className="App" >
       <p>
           Shaina Zaccagnino, Axel Rodriguez-Leon, Alexander Chambers
         </p>
+    <div className="homepage" hidden={mode!=="homepage"}>
       <header className="App-header">
         <p>
           Career Helpi
@@ -38,7 +44,7 @@ function App() {
         <p className ="basic">Not sure where to start? Answer a few small questions to get some starting points on a career path.</p>
         <Button
                         onClick={() =>{
-                            console.log("User was sent to the Basic Page");
+                            changeMode("basic");
                         }}
                         >
                             Basic Quiz
@@ -46,6 +52,7 @@ function App() {
         <p className ="detailed"> Have a few ideas of what you want? Take this quiz to help narrow those career choices down!</p>
        </header>
       </header>
+      </div>
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
