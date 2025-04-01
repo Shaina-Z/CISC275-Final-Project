@@ -35,6 +35,13 @@ function App() {
       <p>
           Shaina Zaccagnino, Axel Rodriguez-Leon, Alexander Chambers
         </p>
+        <Button
+                        onClick={() =>{
+                            changeMode("homepage");
+                        }}
+                        >
+                           Home
+                        </Button>
     <div className="homepage" hidden={mode!=="homepage"}>
       <header className="App-header">
         <p>
@@ -52,6 +59,9 @@ function App() {
         <p className ="detailed"> Have a few ideas of what you want? Take this quiz to help narrow those career choices down!</p>
        </header>
       </header>
+      <div hidden={mode!=="basic"}>
+      <BasicQuestions></BasicQuestions>
+      </div>
       </div>
       <Form>
         <Form.Label>API Key:</Form.Label>
