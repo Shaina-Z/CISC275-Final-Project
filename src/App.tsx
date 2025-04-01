@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
-let keyData = "";
+let keyData = "$OPENAI_API_KEY";
 const saveKeyData = "MYKEY";
 const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
 if (prevKey !== null) {
@@ -26,19 +25,17 @@ function App() {
   }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+      <p>
+          Shaina Zaccagnino, Axel Rodriguez-Leon, Alexander Chambers
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Shaina Zaccagnino, Axel Rodriguez-Leon Alexander Chambers
-        </a>
+      <header className="App-header">
+        <p>
+          Career Helpi
+        </p>
+        <header className ="Questions">
+        <p className ="basic">Not sure where to start? Answer a few small questions to get some starting points on a career path.</p> 
+        <p className ="detailed"> Have a few ideas of what you want? Take this quiz to help narrow those career choices down!</p>
+       </header>
       </header>
       <Form>
         <Form.Label>API Key:</Form.Label>

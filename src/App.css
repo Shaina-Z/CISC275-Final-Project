@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(30px + 2vmin);
   color: white;
 }
 
@@ -28,6 +28,29 @@
   color: #61dafb;
 }
 
+.Questions {
+  min-height: 100vh;
+  display: flex;
+  gap:100px;
+  flex-direction: row;
+  flex-wrap:wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: space-around;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.basic{
+  text-wrap:balance;
+  padding:25px;
+  border-style: solid;
+}
+.detailed{
+  text-wrap:balance;
+  padding:25px;
+  border-style: solid;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
