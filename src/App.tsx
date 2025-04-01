@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
+import {BasicButton} from './Components/BasicButton.tsx';
+import {BasicQuestions} from './Pages/BasicQuestions.tsx';
 import { Button, Form } from 'react-bootstrap';
+
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "$OPENAI_API_KEY";
@@ -12,6 +15,7 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
+  const [page, setPage] = useState<string>("");
   
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -33,7 +37,8 @@ function App() {
           Career Helpi
         </p>
         <header className ="Questions">
-        <p className ="basic">Not sure where to start? Answer a few small questions to get some starting points on a career path.</p> 
+        <p className ="basic">Not sure where to start? Answer a few small questions to get some starting points on a career path.</p>
+        <BasicButton></BasicButton> 
         <p className ="detailed"> Have a few ideas of what you want? Take this quiz to help narrow those career choices down!</p>
        </header>
       </header>

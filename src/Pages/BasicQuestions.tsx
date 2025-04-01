@@ -21,7 +21,7 @@ const Q3ANSWER = [
     "Choice D"
 ]
 
-export function basicQuestions(): React.JSX.Element {
+export function BasicQuestions(): React.JSX.Element {
     const [answer, setAnswer] = useState<string>(Q1ANSWER[0]);
     
     return(
@@ -35,11 +35,7 @@ export function basicQuestions(): React.JSX.Element {
                             name={"response"}
                             key={ananswer}
                             value={ananswer}
-                            label={
-                                <span style={{ backgroundColor: ananswer }}>
-                                    {ananswer}
-                                </span>
-                            }
+                            label={ananswer}
                             onChange={(e) => {
                                 setAnswer(e.target.value);
                             }}
