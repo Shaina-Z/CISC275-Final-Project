@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Pages.css';
-import { Button, Form } from 'react-bootstrap';
+import {Form } from 'react-bootstrap';
 
 const Q1ANSWER = [
     "Choice A",
@@ -28,7 +28,6 @@ interface PageProps{
 }
 
 export function BasicQuestions(): React.JSX.Element{
-    const [page, setPage] = useState<string>("");
     const [answer1, setAnswer1] = useState<string>(Q1ANSWER[0]);
     const [answer2, setAnswer2] = useState<string>(Q2ANSWER[0]);
     const [answer3, setAnswer3] = useState<string>(Q3ANSWER[0]);

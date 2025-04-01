@@ -46,6 +46,13 @@
   padding:25px;
   border-style: solid;
 }
+
+.Basic-Questions{
+  text-wrap:balance;
+  padding:25px;
+  border-style: solid;
+}
+
 .detailed{
   text-wrap:balance;
   padding:25px;
