@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
+import './Pages/Pages.css'
+import {BasicQuestions} from './Pages/BasicQuestions';
+import {DetailedQuestions} from './Pages/DetailedQuestions';
 import { Button, Form } from 'react-bootstrap';
 import stockImage from './careerquizwithbackground.png';
 
@@ -12,6 +15,11 @@ if (prevKey !== null) {
 }
 
 function App() {
+    //set the page depending by hiding contents of other pages unless a button is clicked
+    const [isHome, setHome] = useState<boolean>(false);
+    const [notBasic, setBasic] = useState<boolean>(true);
+    const [notDetailed, setDetailed] = useState<boolean>(true);
+
   const [key, setKey] = useState<string>(keyData); //for api key input
   
   //sets the local storage item to the api key the user inputed
@@ -26,13 +34,67 @@ function App() {
   }
   return (
     <div className="App">
-      <Button className="take-quiz-button">Take our free career quiz now!</Button>
+      <Button className="take-quiz-button" hidden = {isHome}>Take our free career quiz now!</Button>
       <div className="fade-strip">Career Helpi Quiz</div>
-      <header className="App-header"></header>
+      <header className="App-header">
+      <Button //Renders Home Page and hides Detailed and/or Basic Questions pages
+              onClick={() => {
+                if (!notBasic){
+                  setBasic(!notBasic);
+                  setHome(!isHome);
+                }
+                if (!notDetailed){
+                  setDetailed(!notDetailed);
+                  setHome(!isHome);
+                }
+                console.log("User was sent to the Home Page");
+              }}
+            >
+              Home Page
+            </Button>
+            <div className="Basic-Questions" hidden={notBasic}>
+        <BasicQuestions />
+        <div className="Detailed-Questions" hidden={notDetailed}>
+        <DetailedQuestions />
+      </div>
+        </div>
+        </header>
+        <p className ="basic" hidden = {isHome}>Not sure where to start? Answer a few small questions to get some starting points on a career path.
+        <Button //Flips the visibility of the Basic and Home pages
+              onClick={() => {
+                setBasic(!notBasic);
+                setHome(!isHome);
+                console.log("User was sent to the Basic Page");
+              }}
+      
+            >
+              Basic Quiz
+            </Button></p> 
+            
       {/* uncomment later when questions are finished */}
-      {/* <header className ="Questions"></header> */}
-        <p className ="basic">Not sure where to start? Answer a few small questions to get some starting points on a career path.</p> 
-        <p className ="detailed"> Have a few ideas of what you want? Take this quiz to help narrow those career choices down!</p>      
+      <p className ="basic" hidden = {isHome}>Not sure where to start? Answer a few small questions to get some starting points on a career path.
+        <Button //Flips the visibility of the Basic and Home pages
+              onClick={() => {
+                setBasic(!notBasic);
+                setHome(!isHome);
+                console.log("User was sent to the Basic Page");
+              }}
+      
+            >
+              Basic Quiz
+            </Button></p> 
+  <p className ="detailed" hidden = {isHome}> Have a few ideas of what you want? Take this quiz to help narrow those career choices down!
+        <Button //Flips the visibility of the Detailed and Home pages
+              onClick={() => {
+                setDetailed(!notDetailed);
+                setHome(!isHome);
+                console.log("User was sent to the Detailed Page");
+              }}
+            >
+              Detailed Quiz
+            </Button> </p>
+          
+            
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -40,6 +102,7 @@ function App() {
           rel="noopener noreferrer"
         >
         </a>
+      
       <Form className="api-form-container">
         <Form.Label style={{ fontFamily: 'Verdana, sans-serif', color: 'white', fontSize: '20px', }}>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
