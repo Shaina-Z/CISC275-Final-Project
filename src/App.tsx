@@ -34,7 +34,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Button className="take-quiz-button">Take our free career quiz now!</Button>
+      <Button className="take-quiz-button" hidden = {isHome}>Take our free career quiz now!</Button>
       <div className="fade-strip">Career Helpi Quiz</div>
       <header className="App-header">
       <Button //Renders Home Page and hides Detailed and/or Basic Questions pages
@@ -52,15 +52,15 @@ function App() {
             >
               Home Page
             </Button>
-            </header>
             <div className="Basic-Questions" hidden={notBasic}>
         <BasicQuestions />
-      </div>
-      <div className="Detailed-Questions" hidden={notDetailed}>
+        <div className="Detailed-Questions" hidden={notDetailed}>
         <DetailedQuestions />
       </div>
+        </div>
+            </header>
       {/* uncomment later when questions are finished */}
-       <header className ="Questions"> </header>
+
         <p className ="basic" hidden = {isHome}>Not sure where to start? Answer a few small questions to get some starting points on a career path.
         <Button //Flips the visibility of the Basic and Home pages
               onClick={() => {
