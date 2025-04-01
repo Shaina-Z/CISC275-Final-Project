@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Pages.css';
 import { Button, Form } from 'react-bootstrap';
 
 const Q1ANSWER = [
@@ -33,17 +34,8 @@ export function BasicQuestions(props: PageProps): React.JSX.Element{
     const [answer3, setAnswer3] = useState<string>(Q3ANSWER[0]);
     
     return(
-        <span>
-            <Button
-                onClick={() =>{
-                    setPage("BasicQuestions");
-                    console.log("User was sent to the Basic Page");
-                }}
-                >
-                    Basic Quiz
-                </Button>
-                
-                <div className = "Basic Questions">
+        <span>  
+                <div className = "Basic-Questions">
                     <h3>Question 1</h3>
                     <Form.Group controlId={"Question 1"}>
                             {Q1ANSWER.map((ananswer) => (

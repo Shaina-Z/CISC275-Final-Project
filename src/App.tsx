@@ -26,7 +26,7 @@ function App() {
     setKey(event.target.value);
   }
   return (
-    <div className="App">
+    <div className="App" hidden={false}>
       <p>
           Shaina Zaccagnino, Axel Rodriguez-Leon, Alexander Chambers
         </p>
@@ -36,7 +36,13 @@ function App() {
         </p>
         <header className ="Questions">
         <p className ="basic">Not sure where to start? Answer a few small questions to get some starting points on a career path.</p>
-        <BasicQuestions pageName={'Basic Questions'} question={'Question 1'} answers={["Choice A", "Choice B", "Choice C", "Choice D"]}></BasicQuestions>
+        <Button
+                        onClick={() =>{
+                            console.log("User was sent to the Basic Page");
+                        }}
+                        >
+                            Basic Quiz
+                        </Button>
         <p className ="detailed"> Have a few ideas of what you want? Take this quiz to help narrow those career choices down!</p>
        </header>
       </header>
