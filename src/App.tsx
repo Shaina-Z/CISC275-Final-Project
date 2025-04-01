@@ -15,9 +15,11 @@ if (prevKey !== null) {
 }
 
 function App(): React.JSX.Element {
+  //set the page depending by hiding contents of other pages unless a button is clicked
   const [isHome, setHome] = useState<boolean>(false);
   const [notBasic, setBasic] = useState<boolean>(true);
   const [notDetailed, setDetailed] = useState<boolean>(true);
+
   const [key, setKey] = useState<string>(keyData); //for api key input
   //sets the local storage item to the api key the user inputed
 
@@ -37,6 +39,21 @@ function App(): React.JSX.Element {
         <p>Shaina Zaccagnino, Axel Rodriguez-Leon, Alexander Chambers</p>
         <header className="App-header">
           <p>Career Helpi</p>
+          <Button //Flips the visibility of the Basic and Home pages
+              onClick={() => {
+                if (!notBasic){
+                  setBasic(!notBasic);
+                  setHome(!isHome);
+                }
+                if (!notDetailed){
+                  setDetailed(!notDetailed);
+                  setHome(!isHome);
+                }
+                console.log("User was sent to the Home Page");
+              }}
+            >
+              Home Page
+            </Button>
           <div className="Basic-Questions" hidden={notBasic}>
         <BasicQuestions />
       </div>
@@ -47,7 +64,7 @@ function App(): React.JSX.Element {
             <p className="basic">
               Not sure where to start? Answer a few small questions to get some starting points on a career path.
             </p>
-            <Button //Flips the visbility of the Basic and Home pages
+            <Button //Flips the visibility of the Basic and Home pages
               onClick={() => {
                 setBasic(!notBasic);
                 setHome(!isHome);
@@ -60,7 +77,7 @@ function App(): React.JSX.Element {
               Have a few ideas of what you want? Take this quiz to help narrow those career choices down!
             </p>
           </header>
-          <Button //Flips the visbility of the Detailed and Home pages
+          <Button //Flips the visibility of the Detailed and Home pages
               onClick={() => {
                 setDetailed(!notDetailed);
                 setHome(!isHome);
