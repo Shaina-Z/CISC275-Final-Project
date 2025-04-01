@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import './Pages/Pages.css'
 import {BasicQuestions} from './Pages/BasicQuestions';
+import {DetailedQuestions} from './Pages/DetailedQuestions';
 import { Button, Form } from 'react-bootstrap';
 
 
@@ -14,10 +15,12 @@ if (prevKey !== null) {
 }
 
 function App(): React.JSX.Element {
+  const [isHome, setHome] = useState<boolean>(false);
+  const [notBasic, setBasic] = useState<boolean>(true);
+  const [notDetailed, setDetailed] = useState<boolean>(true);
   const [key, setKey] = useState<string>(keyData); //for api key input
   //sets the local storage item to the api key the user inputed
-  const [notBasic, setBasic] = useState<boolean>(true);
-  const [isHome, setHome] = useState<boolean>(false);
+
   function handleSubmit() {
     localStorage.setItem(saveKeyData, JSON.stringify(key));
     window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
@@ -33,6 +36,9 @@ function App(): React.JSX.Element {
       <div className="Basic-Questions" hidden={notBasic}>
         <BasicQuestions />
       </div>
+      <div className="Detailed-Questions" hidden={notBasic}>
+        <DetailedQuestions />
+      </div>
       <div className="App" hidden={isHome}>
         <p>Shaina Zaccagnino, Axel Rodriguez-Leon, Alexander Chambers</p>
         <header className="App-header">
@@ -41,7 +47,7 @@ function App(): React.JSX.Element {
             <p className="basic">
               Not sure where to start? Answer a few small questions to get some starting points on a career path.
             </p>
-            <Button
+            <Button //Flips the visbility of the Basic and Home page
               onClick={() => {
                 setBasic(!notBasic);
                 setHome(!isHome);
@@ -54,6 +60,15 @@ function App(): React.JSX.Element {
               Have a few ideas of what you want? Take this quiz to help narrow those career choices down!
             </p>
           </header>
+          <Button //Flips the visbility of the Basic and Home page
+              onClick={() => {
+                setBasic(!notBasic);
+                setHome(!isHome);
+                console.log("User was sent to the Detailed Page");
+              }}
+            >
+              Detailed Quiz
+            </Button>
         </header>
         <Form>
           <Form.Label>API Key:</Form.Label>

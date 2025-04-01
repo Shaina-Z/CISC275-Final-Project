@@ -21,9 +21,7 @@ const Q3ANSWER = [
     "Choice D"
 ]
 
-
-
-export function BasicQuestions(): React.JSX.Element{
+export function DetailedQuestions(): React.JSX.Element{
     const [answer1, setAnswer1] = useState<string>(Q1ANSWER[0]);
     const [answer2, setAnswer2] = useState<string>(Q2ANSWER[0]);
     const [answer3, setAnswer3] = useState<string>(Q3ANSWER[0]);
@@ -32,7 +30,7 @@ export function BasicQuestions(): React.JSX.Element{
         
         <span>  
                 <div className = "Basic-Questions">
-                    <header> Basic Quiz</header>
+                    <header> Detailed Quiz</header>
                     <h3>Question 1</h3>
                     <Form.Group controlId={"Question 1"}>
                             {Q1ANSWER.map((ananswer) => (
