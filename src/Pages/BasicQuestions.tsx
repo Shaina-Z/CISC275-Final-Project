@@ -43,6 +43,7 @@ export function BasicQuestions(props: PageProps): React.JSX.Element{
                 >
                     Basic Quiz
                 </Button>
+                
                 <div className = "Basic Questions">
                     <h3>Question 1</h3>
                     <Form.Group controlId={"Question 1"}>
@@ -50,7 +51,7 @@ export function BasicQuestions(props: PageProps): React.JSX.Element{
                                 <Form.Check
                                 inline
                                 type={"radio"}
-                                name={"response"}
+                                name={"response1"}
                                 key={ananswer}
                                 value={ananswer}
                                 label={ananswer}
@@ -67,7 +68,7 @@ export function BasicQuestions(props: PageProps): React.JSX.Element{
                                 <Form.Check
                                 inline
                                 type={"radio"}
-                                name={"response"}
+                                name={"response2"}
                                 key={ananswer2}
                                 value={ananswer2}
                                 label={ananswer2}
@@ -80,11 +81,11 @@ export function BasicQuestions(props: PageProps): React.JSX.Element{
                     </Form.Group>
                     <h3>Question 3</h3>
                     <Form.Group controlId={"Question 3"}>
-                            {Q1ANSWER.map((ananswer3) => (
+                            {Q3ANSWER.map((ananswer3) => (
                                 <Form.Check
                                 inline
                                 type={"radio"}
-                                name={"response"}
+                                name={"response3"}
                                 key={ananswer3}
                                 value={ananswer3}
                                 label={ananswer3}
