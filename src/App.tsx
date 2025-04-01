@@ -58,9 +58,7 @@ function App() {
         <DetailedQuestions />
       </div>
         </div>
-            </header>
-      {/* uncomment later when questions are finished */}
-
+        </header>
         <p className ="basic" hidden = {isHome}>Not sure where to start? Answer a few small questions to get some starting points on a career path.
         <Button //Flips the visibility of the Basic and Home pages
               onClick={() => {
@@ -72,8 +70,20 @@ function App() {
             >
               Basic Quiz
             </Button></p> 
-        
-        <p className ="detailed" hidden = {isHome}> Have a few ideas of what you want? Take this quiz to help narrow those career choices down!
+            
+      {/* uncomment later when questions are finished */}
+      <p className ="basic" hidden = {isHome}>Not sure where to start? Answer a few small questions to get some starting points on a career path.
+        <Button //Flips the visibility of the Basic and Home pages
+              onClick={() => {
+                setBasic(!notBasic);
+                setHome(!isHome);
+                console.log("User was sent to the Basic Page");
+              }}
+      
+            >
+              Basic Quiz
+            </Button></p> 
+  <p className ="detailed" hidden = {isHome}> Have a few ideas of what you want? Take this quiz to help narrow those career choices down!
         <Button //Flips the visibility of the Detailed and Home pages
               onClick={() => {
                 setDetailed(!notDetailed);
@@ -83,6 +93,8 @@ function App() {
             >
               Detailed Quiz
             </Button> </p>
+          
+            
         <a
           className="App-link"
           href="https://reactjs.org"
