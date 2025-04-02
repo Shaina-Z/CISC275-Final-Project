@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (44 ms)
+  ✕ renders learn react link (95 ms)
 
   ● renders learn react link
 
@@ -28,54 +28,154 @@ FAIL src/App.test.tsx
           [36m</div>[39m
           [36m<header[39m
             [33mclass[39m=[32m"App-header"[39m
-          [36m/>[39m
-          [36m<p[39m
-            [33mclass[39m=[32m"basic"[39m
           [36m>[39m
-            [0mNot sure where to start? Answer a few small questions to get some starting points on a career path.[0m
-          [36m</p>[39m
-          [36m<p[39m
-            [33mclass[39m=[32m"detailed"[39m
-          [36m>[39m
-            [0m Have a few ideas of what you want? Take this quiz to help narrow those career choices down![0m
-          [36m</p>[39m
-          [36m<a[39m
-            [33mclass[39m=[32m"App-link"[39m
-            [33mhref[39m=[32m"https://reactjs.org"[39m
-            [33mrel[39m=[32m"noopener noreferrer"[39m
-            [33mtarget[39m=[32m"_blank"[39m
-          [36m/>[39m
-          [36m<form[39m
-            [33mclass[39m=[32m"api-form-container"[39m
-          [36m>[39m
-            [36m<label[39m
-              [33mclass[39m=[32m"form-label"[39m
-              [33mstyle[39m=[32m"font-family: Verdana, sans-serif; color: white; font-size: 20px;"[39m
-            [36m>[39m
-              [0mAPI Key:[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mclass[39m=[32m"form-control"[39m
-              [33mplaceholder[39m=[32m"Insert API Key Here"[39m
-              [33mtype[39m=[32m"password"[39m
-            [36m/>[39m
-            [36m<br />[39m
             [36m<button[39m
-              [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
-              [33mstyle[39m=[32m"background-color: rgb(211, 220, 237); color: black; font-size: 16px; padding: 10px 20px; border-radius: 20px; cursor: pointer;"[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
               [33mtype[39m=[32m"button"[39m
             [36m>[39m
-              [0mSubmit[0m
+              [0mHome Page[0m
             [36m</button>[39m
-          [36m</form>[39m
-          [36m<img[39m
-            [33malt[39m=[32m"stockimage"[39m
-            [33msrc[39m=[32m"careerquizwithbackground.png"[39m
-            [33mstyle[39m=[32m"position: fixed; bottom: 0px; right: 10px; width: 450px; height: auto;"[39m
-          [36m/>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"Basic-Questions"[39m
+              [33mhidden[39m=[32m""[39m
+            [36m>[39m
+              [36m<span>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"Basic-Questions"[39m
+                [36m>[39m
+                  [36m<header>[39m
+                    [0m Basic Quiz[0m
+                  [36m</header>[39m
+                  [36m<h3>[39m
+                    [0mQuestion 1[0m
+                  [36m</h3>[39m
+                  [36m<div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"form-check form-check-inline"[39m
+                    [36m>[39m
+                      [36m<input[39m
+                        [33mchecked[39m=[32m""[39m
+                        [33mclass[39m=[32m"form-check-input"[39m
+                        [33mid[39m=[32m"Question 1"[39m
+                        [33mname[39m=[32m"response1"[39m
+                        [33mtype[39m=[32m"radio"[39m
+                        [33mvalue[39m=[32m"Choice A"[39m
+                      [36m/>[39m
+                      [36m<label[39m
+                        [33mclass[39m=[32m"form-check-label"[39m
+                        [33mfor[39m=[32m"Question 1"[39m
+                        [33mtitle[39m=[32m""[39m
+                      [36m>[39m
+                        [0mChoice A[0m
+                      [36m</label>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"form-check form-check-inline"[39m
+                    [36m>[39m
+                      [36m<input[39m
+                        [33mclass[39m=[32m"form-check-input"[39m
+                        [33mid[39m=[32m"Question 1"[39m
+                        [33mname[39m=[32m"response1"[39m
+                        [33mtype[39m=[32m"radio"[39m
+                        [33mvalue[39m=[32m"Choice B"[39m
+                      [36m/>[39m
+                      [36m<label[39m
+                        [33mclass[39m=[32m"form-check-label"[39m
+                        [33mfor[39m=[32m"Question 1"[39m
+                        [33mtitle[39m=[32m""[39m
+                      [36m>[39m
+                        [0mChoice B[0m
+                      [36m</label>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"form-check form-check-inline"[39m
+                    [36m>[39m
+                      [36m<input[39m
+                        [33mclass[39m=[32m"form-check-input"[39m
+                        [33mid[39m=[32m"Question 1"[39m
+                        [33mname[39m=[32m"response1"[39m
+                        [33mtype[39m=[32m"radio"[39m
+                        [33mvalue[39m=[32m"Choice C"[39m
+                      [36m/>[39m
+                      [36m<label[39m
+                        [33mclass[39m=[32m"form-check-label"[39m
+                        [33mfor[39m=[32m"Question 1"[39m
+                        [33mtitle[39m=[32m""[39m
+                      [36m>[39m
+                        [0mChoice C[0m
+                      [36m</label>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"form-check form-check-inline"[39m
+                    [36m>[39m
+                      [36m<input[39m
+                        [33mclass[39m=[32m"form-check-input"[39m
+                        [33mid[39m=[32m"Question 1"[39m
+                        [33mname[39m=[32m"response1"[39m
+                        [33mtype[39m=[32m"radio"[39m
+                        [33mvalue[39m=[32m"Choice D"[39m
+                      [36m/>[39m
+                      [36m<label[39m
+                        [33mclass[39m=[32m"form-check-label"[39m
+                        [33mfor[39m=[32m"Question 1"[39m
+                        [33mtitle[39m=[32m""[39m
+                      [36m>[39m
+                        [0mChoice D[0m
+                      [36m</label>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                  [36m<h3>[39m
+                    [0mQuestion 2[0m
+                  [36m</h3>[39m
+                  [36m<div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"form-check form-check-inline"[39m
+                    [36m>[39m
+                      [36m<input[39m
+                        [33mchecked[39m=[32m""[39m
+                        [33mclass[39m=[32m"form-check-input"[39m
+                        [33mid[39m=[32m"Question 2"[39m
+                        [33mname[39m=[32m"response2"[39m
+                        [33mtype[39m=[32m"radio"[39m
+                        [33mvalue[39m=[32m"Choice A"[39m
+                      [36m/>[39m
+                      [36m<label[39m
+                        [33mclass[39m=[32m"form-check-label"[39m
+                        [33mfor[39m=[32m"Question 2"[39m
+                        [33mtitle[39m=[32m""[39m
+                      [36m>[39m
+                        [0mChoice A[0m
+                      [36m</label>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"form-check form-check-inline"[39m
+                    [36m>[39m
+                      [36m<input[39m
+                        [33mclass[39m=[32m"form-check-input"[39m
+                        [33mid[39m=[32m"Question 2"[39m
+                        [33mname[39m=[32m"response2"[39m
+                        [33mtype[39m=[32m"radio"[39m
+                        [33mvalue[39m=[32m"Choice B"[39m
+                      [36m/>[39m
+                      [36m<label[39m
+                        [33mclass[39m=[32m"form-check-label"[39m
+                        [33mfor[39m=[32m"Question 2"[39m
+                        [33mtitle[39m=[32m""[39m
+                      [36m>[39m
+                        [0mChoice B[0m
+                      [36m</label>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"form-check form-check-inline"[39m
+                    [36m>[39m
+                      [36m<input[39m
+                        [33mclass[39m=[32m"form-check-input"[39m
+                        [33mid[39m=[32m"Question 2"[39m
+                        [33mname[39m=[32m"response2"[39m
+                        [33mtype[39m=[32m"radio"[39m
+                        [33mvalue[39m=[32m"Choice C"[39m
+                      [36m/>[39m
+       ...
 
        5 | test('renders learn react link', () => {
        6 |   render(<App />);
@@ -95,18 +195,22 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
---------------------|---------|----------|---------|---------|-------------------
-File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------------|---------|----------|---------|---------|-------------------
-All files           |   28.57 |    16.66 |      20 |   28.57 |                   
- App.tsx            |      60 |       50 |   33.33 |      60 | 11,19-25          
- index.tsx          |       0 |      100 |     100 |       0 | 7-19              
- reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
---------------------|---------|----------|---------|---------|-------------------
+------------------------|---------|----------|---------|---------|-------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------------|---------|----------|---------|---------|-------------------
+All files               |   43.93 |       10 |   39.13 |   43.93 |                   
+ src                    |    22.5 |       10 |   11.11 |    22.5 |                   
+  App.tsx               |   31.03 |    16.66 |   14.28 |   31.03 | 14,27-33,42-91    
+  index.tsx             |       0 |      100 |     100 |       0 | 7-19              
+  reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10              
+ src/Pages              |   76.92 |      100 |   57.14 |   76.92 |                   
+  BasicQuestions.tsx    |   76.92 |      100 |   57.14 |   76.92 | 47,64,81          
+  DetailedQuestions.tsx |   76.92 |      100 |   57.14 |   76.92 | 45,62,79          
+------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.634 s
+Time:        2.861 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
