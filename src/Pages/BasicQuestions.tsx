@@ -63,7 +63,7 @@ export function BasicQuestions(): React.JSX.Element{
                                 onChange={(e) => {
                                     setAnswer2(e.target.value);
                                 }}
-                                checked={answer2 === ananswer2}
+                                //checked={answer2 === ananswer2}
                             />
                         ))}
                     </Form.Group>
@@ -80,7 +80,7 @@ export function BasicQuestions(): React.JSX.Element{
                                 onChange={(e) => {
                                     setAnswer3(e.target.value);
                                 }}
-                                checked={answer3 === ananswer3}
+                                //checked={answer3 === ananswer3}
                             />
                         ))}
                 </Form.Group>
