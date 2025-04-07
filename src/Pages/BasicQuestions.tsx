@@ -27,7 +27,12 @@ export function BasicQuestions(): React.JSX.Element{
     const [answer1, setAnswer1] = useState<string>(Q1ANSWER[0]);
     const [answer2, setAnswer2] = useState<string>(Q2ANSWER[0]);
     const [answer3, setAnswer3] = useState<string>(Q3ANSWER[0]);
-    
+    const [progress,setProgress]=useState<number>(0)
+    let sum =0;
+    function UpdateProgress(){
+        sum+=1;
+        setProgress(sum);
+    }
     return(
         
         <span>  
@@ -78,12 +83,13 @@ export function BasicQuestions(): React.JSX.Element{
                                 value={ananswer3}
                                 label={ananswer3}
                                 onChange={(e) => {
-                                    setAnswer3(e.target.value);
+                                    UpdateProgress();
                                 }}
                                 checked={answer3 === ananswer3}
                             />
                         ))}
                 </Form.Group>
+                <progress value={progress} max={7} ></progress>
                 </div>
         </span>
     )
