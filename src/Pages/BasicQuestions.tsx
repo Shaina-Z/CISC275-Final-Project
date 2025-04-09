@@ -28,10 +28,10 @@ export function BasicQuestions(): React.JSX.Element{
     const [answer2, setAnswer2] = useState<string>(Q2ANSWER[0]);
     const [answer3, setAnswer3] = useState<string>(Q3ANSWER[0]);
     const [progress,setProgress]=useState<number>(0)
-    let sum =0;
+
     function UpdateProgress(){
-        sum+=1;
-        setProgress(sum);
+      setProgress(progress+1);
+      console.log(progress);
     }
     return(
         
@@ -50,6 +50,7 @@ export function BasicQuestions(): React.JSX.Element{
                                 label={ananswer}
                                 onChange={(e) => {
                                     setAnswer1(e.target.value);
+                                    UpdateProgress();
                                 }}
                                 checked={answer1 === ananswer}
                             />
@@ -67,6 +68,7 @@ export function BasicQuestions(): React.JSX.Element{
                                 label={ananswer2}
                                 onChange={(e) => {
                                     setAnswer2(e.target.value);
+                                    UpdateProgress();
                                 }}
                                 checked={answer2 === ananswer2}
                             />
@@ -83,7 +85,9 @@ export function BasicQuestions(): React.JSX.Element{
                                 value={ananswer3}
                                 label={ananswer3}
                                 onChange={(e) => {
-                                    UpdateProgress();
+                                    setAnswer3(e.target.value
+                                     );
+                                     UpdateProgress();
                                 }}
                                 checked={answer3 === ananswer3}
                             />
