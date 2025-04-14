@@ -46,7 +46,7 @@ export function BasicQuestions(): React.JSX.Element{
                                 onChange={(e) => {
                                     setAnswer1(e.target.value);
                                 }}
-                                checked={answer1 === ananswer}
+                                //checked={answer1 === ananswer}
                             />
                         ))}
                     </Form.Group>

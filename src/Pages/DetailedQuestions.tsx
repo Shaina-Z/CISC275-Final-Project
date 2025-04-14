@@ -29,7 +29,7 @@ export function DetailedQuestions(): React.JSX.Element{
     return(
         
         <span>  
-                <div className = "Detailed-Questions">
+                <div className = "Detailed-Question">
                     <header> Detailed Quiz</header>
                     <h3>Question 1</h3>
                     <Form.Group controlId={"Question 1"}>
