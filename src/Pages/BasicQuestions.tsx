@@ -94,6 +94,7 @@ export function BasicQuestions(): React.JSX.Element{
                         ))}
                 </Form.Group>
                 <progress value={progress} max={7} ></progress>
+                <div className='Ready' hidden={progress!==7}>Ready to Submit?</div>
                 </div>
         </span>
     )
