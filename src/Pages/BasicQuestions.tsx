@@ -10,19 +10,42 @@ const QTYPEAANSWER = [
     "Strongly agree"
 ]
 
+const Q5ANSWER = [
+    "Choice A",
+    "Choice B",
+    "Choice C",
+    "Choice D"
+]
 
+const Q6ANSWER = [
+    "Choice A",
+    "Choice B",
+    "Choice C",
+    "Choice D"
+]
+
+const Q7ANSWER = [
+    "Choice A",
+    "Choice B",
+    "Choice C",
+    "Choice D"
+]
 export function BasicQuestions(): React.JSX.Element{
         const [answer1, setAnswer1] = useState<string>(QTYPEAANSWER[0]);
         const [answer2, setAnswer2] = useState<string>(QTYPEAANSWER[0]);
         const [answer3, setAnswer3] = useState<string>(QTYPEAANSWER[0]);
         const [answer4, setAnswer4] = useState<string>(QTYPEAANSWER[0]);
         const [answer5, setAnswer5] = useState<string>(QTYPEAANSWER[0]);
-    
+        const [progress,setProgress]=useState<number>(0)
+        function UpdateProgress(){
+            setProgress(progress+1);
+            console.log(progress);
+          }
     return(
         <span>  
             <div className="page-wrapper">
                 <div className = "Basic-Questions">
-                    <header style={{fontSize:40}}> Basic Quiz</header>
+                    <header className="Basic-Title" style={{fontSize:40}}> Basic Quiz</header>
                     <h3 style={{color: 'white'}}>1. I would like to develop new medicine</h3>
                     <Form.Group controlId={"Question 1"}>
                             {QTYPEAANSWER.map((ananswer) => (
@@ -35,8 +58,9 @@ export function BasicQuestions(): React.JSX.Element{
                                 label={ananswer}
                                 onChange={(e) => {
                                     setAnswer1(e.target.value);
+                                    UpdateProgress();
                                 }}
-                                checked={answer1 === ananswer}
+                                //checked={answer1 === ananswer}
                             />
                         ))}
                     </Form.Group>
@@ -52,8 +76,9 @@ export function BasicQuestions(): React.JSX.Element{
                                 label={ananswer2}
                                 onChange={(e) => {
                                     setAnswer2(e.target.value);
+                                    UpdateProgress();
                                 }}
-                                checked={answer2 === ananswer2}
+                                //checked={answer2 === ananswer2}
                             />
                         ))}
                     </Form.Group>
@@ -68,9 +93,11 @@ export function BasicQuestions(): React.JSX.Element{
                                 value={ananswer3}
                                 label={ananswer3}
                                 onChange={(e) => {
-                                    setAnswer3(e.target.value);
+                                    setAnswer3(e.target.value
+                                     );
+                                     UpdateProgress();
                                 }}
-                                checked={answer3 === ananswer3}
+                                //checked={answer3 === ananswer3}
                             />
                         ))}
                 </Form.Group>
@@ -86,8 +113,9 @@ export function BasicQuestions(): React.JSX.Element{
                                 label={ananswer4}
                                 onChange={(e) => {
                                     setAnswer4(e.target.value);
+                                    UpdateProgress();
                                 }}
-                                checked={answer4 === ananswer4}
+                                //checked={answer4 === ananswer4}
                             />
                         ))}
                 </Form.Group>
@@ -103,13 +131,17 @@ export function BasicQuestions(): React.JSX.Element{
                                 label={ananswer5}
                                 onChange={(e) => {
                                     setAnswer5(e.target.value);
+                                    UpdateProgress();
                                 }}
-                                checked={answer5 === ananswer5}
+                                //checked={answer5 === ananswer5}
                             />
                         ))}
                 </Form.Group>
+                <progress value={progress} max={7} ></progress>
+                <div className='Ready' hidden={progress<=7}>Ready to Submit?</div>
                 </div>
             </div>    
         </span>
     )
 }
+

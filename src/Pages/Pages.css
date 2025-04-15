@@ -5,8 +5,13 @@
     padding: 15px;
     top: 67%;
 }
-
-.Detailed-Question {
+.Basic-Title{
+    color:white
+}
+.Ready{
+    color: white;
+}
+.Detailed-Question{
     text-align: center;
 }
 

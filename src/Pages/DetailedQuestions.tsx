@@ -2,76 +2,102 @@ import React, { useState } from 'react';
 import './Pages.css';
 import {Form } from 'react-bootstrap';
 
-const QTYPEAANSWER = [
-    "Strongly disagree",
-    "Disagree",
-    "Unsure",
-    "Agree",
-    "Strongly agree"
-]
 
 
 export function DetailedQuestions(): React.JSX.Element{
-    const [answer1, setAnswer1] = useState<string>(QTYPEAANSWER[0]);
-    const [answer2, setAnswer2] = useState<string>(QTYPEAANSWER[0]);
-    const [answer3, setAnswer3] = useState<string>(QTYPEAANSWER[0]);
+    const [response, setResponse] = useState(
+        { q1: "Type your answer here!", q2: "Type your answer here!", q3: "Type your answer here!",
+            q4: "Type your answer here!", q5: "Type your answer here!", q6: "Type your answer here!",
+            q7: "Type your answer here!"
+        }
+    );
+    const [progress,setProgress]=useState<number>(0)
+    function updateAnswer(event: React.ChangeEvent<HTMLTextAreaElement>){
+        const {name, value} = event.target
+        setResponse(prev => ({...prev, [name]: value}));
+        setProgress(progress+1);
+    }
     
-    return( 
-        <span>  
-                <div className = "Detailed-Question">
-                    <header> Detailed Quiz</header>
-                    <h3>1. I would like to develop new medicine</h3>
-                    <Form.Group controlId={"Question 1"}>
-                            {QTYPEAANSWER.map((ananswer) => (
-                                <Form.Check
-                                inline
-                                type={"radio"}
-                                name={"response1"}
-                                key={ananswer}
-                                value={ananswer}
-                                label={ananswer}
-                                onChange={(e) => {
-                                    setAnswer1(e.target.value);
-                                }}
-                                checked={answer1 === ananswer}
-                            />
-                        ))}
-                    </Form.Group>
-                    <h3>2. I would like to write books or plays</h3>
-                    <Form.Group controlId={"Question 2"}>
-                            {QTYPEAANSWER.map((ananswer2) => (
-                                <Form.Check
-                                inline
-                                type={"radio"}
-                                name={"response2"}
-                                key={ananswer2}
-                                value={ananswer2}
-                                label={ananswer2}
-                                onChange={(e) => {
-                                    setAnswer2(e.target.value);
-                                }}
-                                checked={answer2 === ananswer2}
-                            />
-                        ))}
-                    </Form.Group>
-                    <h3>3. I would like to install software across computers on a large network</h3>
-                    <Form.Group controlId={"Question 3"}>
-                            {QTYPEAANSWER.map((ananswer3) => (
-                                <Form.Check
-                                inline
-                                type={"radio"}
-                                name={"response3"}
-                                key={ananswer3}
-                                value={ananswer3}
-                                label={ananswer3}
-                                onChange={(e) => {
-                                    setAnswer3(e.target.value);
-                                }}
-                                checked={answer3 === ananswer3}
-                            />
-                        ))}
+    return(
+        
+        <span> 
+            <header> Detailed Quiz</header> 
+            <div className = "Detailed-Question">
+                <Form.Group controlId="formQuestion1">
+                <Form.Label>Question 1:</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
+                    name="q1"
+                    value={response.q1}
+                    onChange={updateAnswer} />
                 </Form.Group>
-                </div>
+            </div>
+            <small>
+                {response.q1.length} Characters
+            </small>
+
+            <div className = "Detailed-Question">
+                <Form.Group controlId="formQuestion2">
+                <Form.Label>Question 2:</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
+                    name="q2"
+                    value={response.q2}
+                    onChange={updateAnswer} />
+                </Form.Group>
+            </div>
+            <small>
+                {response.q2.length} Characters
+            </small>
+
+            <div className = "Detailed-Question">
+                <Form.Group controlId="formQuestion3">
+                <Form.Label>Question 3:</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
+                    name="q3"
+                    value={response.q3}
+                    onChange={updateAnswer} />
+                </Form.Group>
+            </div>
+            <small>
+                {response.q3.length} Characters
+            </small>
+
+            <div className = "Detailed-Question">
+                <Form.Group controlId="formQuestion4">
+                <Form.Label>Question 4:</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
+                    name="q4"
+                    value={response.q4}
+                    onChange={updateAnswer} />
+                </Form.Group>
+            </div>
+            <small>
+                {response.q4.length} Characters
+            </small>
+
+            <div className = "Detailed-Question">
+                <Form.Group controlId="formQuestion5">
+                <Form.Label>Question 5:</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
+                    name="q5"
+                    value={response.q5}
+                    onChange={updateAnswer} />
+                </Form.Group>
+            </div>
+            <progress value={progress} max={7} ></progress>
+                <div hidden={progress<=7}>Ready to Submit?</div>
+            <small>
+                {response.q5.length} Characters
+            </small>
         </span>
     )
 }
