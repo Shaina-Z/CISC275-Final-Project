@@ -10,26 +10,7 @@ const QTYPEAANSWER = [
     "Strongly agree"
 ]
 
-const Q5ANSWER = [
-    "Choice A",
-    "Choice B",
-    "Choice C",
-    "Choice D"
-]
 
-const Q6ANSWER = [
-    "Choice A",
-    "Choice B",
-    "Choice C",
-    "Choice D"
-]
-
-const Q7ANSWER = [
-    "Choice A",
-    "Choice B",
-    "Choice C",
-    "Choice D"
-]
 export function BasicQuestions(): React.JSX.Element{
         const [answer1, setAnswer1] = useState<string>(QTYPEAANSWER[0]);
         const [answer2, setAnswer2] = useState<string>(QTYPEAANSWER[0]);
@@ -60,7 +41,7 @@ export function BasicQuestions(): React.JSX.Element{
                                     setAnswer1(e.target.value);
                                     UpdateProgress();
                                 }}
-                                //checked={answer1 === ananswer}
+                               //checked={answer1 !== ananswer}
                             />
                         ))}
                     </Form.Group>
@@ -78,7 +59,7 @@ export function BasicQuestions(): React.JSX.Element{
                                     setAnswer2(e.target.value);
                                     UpdateProgress();
                                 }}
-                                //checked={answer2 === ananswer2}
+                                //checked={answer2 !== ananswer2}
                             />
                         ))}
                     </Form.Group>
@@ -97,7 +78,7 @@ export function BasicQuestions(): React.JSX.Element{
                                      );
                                      UpdateProgress();
                                 }}
-                                //checked={answer3 === ananswer3}
+                                //checked={answer3 !== ananswer3}
                             />
                         ))}
                 </Form.Group>
@@ -115,7 +96,7 @@ export function BasicQuestions(): React.JSX.Element{
                                     setAnswer4(e.target.value);
                                     UpdateProgress();
                                 }}
-                                //checked={answer4 === ananswer4}
+                                //checked={answer4 !== ananswer4}
                             />
                         ))}
                 </Form.Group>
@@ -133,7 +114,7 @@ export function BasicQuestions(): React.JSX.Element{
                                     setAnswer5(e.target.value);
                                     UpdateProgress();
                                 }}
-                                //checked={answer5 === ananswer5}
+                                //checked={answer5 !== ananswer5}
                             />
                         ))}
                 </Form.Group>
