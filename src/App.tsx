@@ -70,7 +70,6 @@ function App() {
         <div className="Detailed-Questions" hidden={notDetailed}>
         <DetailedQuestions />
       </div>
-        </header>
         <p className ="basic" style= {{zIndex: 5}} hidden = {isHome}>Not sure where to start? Answer a few small questions to get some starting points on a career path.
         <Button style={{backgroundColor: 'darkblue'}}//Flips the visibility of the Basic and Home pages
               onClick={() => {
@@ -95,7 +94,7 @@ function App() {
               Detailed Quiz
             </Button> </p>
           
-            
+            </header>
         <a
           className="App-link"
           href="https://reactjs.org"
