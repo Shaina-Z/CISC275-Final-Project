@@ -3,6 +3,7 @@ import './Pages.css';
 import {Form } from 'react-bootstrap';
 
 
+
 export function DetailedQuestions(): React.JSX.Element{
     const [response, setResponse] = useState(
         { q1: "Type your answer here!", q2: "Type your answer here!", q3: "Type your answer here!",
@@ -63,6 +64,36 @@ export function DetailedQuestions(): React.JSX.Element{
             </div>
             <small>
                 {response.q3.length} Characters
+            </small>
+
+            <div className = "Detailed-Question">
+                <Form.Group controlId="formQuestion4">
+                <Form.Label>Question 4:</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
+                    name="q4"
+                    value={response.q4}
+                    onChange={updateAnswer} />
+                </Form.Group>
+            </div>
+            <small>
+                {response.q4.length} Characters
+            </small>
+
+            <div className = "Detailed-Question">
+                <Form.Group controlId="formQuestion5">
+                <Form.Label>Question 5:</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
+                    name="q5"
+                    value={response.q5}
+                    onChange={updateAnswer} />
+                </Form.Group>
+            </div>
+            <small>
+                {response.q5.length} Characters
             </small>
         </span>
     )

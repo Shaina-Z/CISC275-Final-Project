@@ -2,41 +2,31 @@ import React, { useState } from 'react';
 import './Pages.css';
 import {Form } from 'react-bootstrap';
 
-const Q1ANSWER = [
-    "Choice A",
-    "Choice B",
-    "Choice C",
-    "Choice D"
+const QTYPEAANSWER = [
+    "Strongly disagree",
+    "Disagree",
+    "Unsure",
+    "Agree",
+    "Strongly agree"
 ]
-const Q2ANSWER = [
-    "Choice A",
-    "Choice B",
-    "Choice C",
-    "Choice D"
-]
-const Q3ANSWER = [
-    "Choice A",
-    "Choice B",
-    "Choice C",
-    "Choice D"
-]
-
 
 
 export function BasicQuestions(): React.JSX.Element{
-    const [answer1, setAnswer1] = useState<string>(Q1ANSWER[0]);
-    const [answer2, setAnswer2] = useState<string>(Q2ANSWER[0]);
-    const [answer3, setAnswer3] = useState<string>(Q3ANSWER[0]);
+        const [answer1, setAnswer1] = useState<string>(QTYPEAANSWER[0]);
+        const [answer2, setAnswer2] = useState<string>(QTYPEAANSWER[0]);
+        const [answer3, setAnswer3] = useState<string>(QTYPEAANSWER[0]);
+        const [answer4, setAnswer4] = useState<string>(QTYPEAANSWER[0]);
+        const [answer5, setAnswer5] = useState<string>(QTYPEAANSWER[0]);
     
     return(
-        
         <span>  
+            <div className="page-wrapper">
                 <div className = "Basic-Questions">
-                    <header> Basic Quiz</header>
-                    <h3>Question 1</h3>
+                    <header style={{fontSize:40}}> Basic Quiz</header>
+                    <h3 style={{color: 'white'}}>1. I would like to develop new medicine</h3>
                     <Form.Group controlId={"Question 1"}>
-                            {Q1ANSWER.map((ananswer) => (
-                                <Form.Check
+                            {QTYPEAANSWER.map((ananswer) => (
+                                <Form.Check style={{color: 'white'}}
                                 inline
                                 type={"radio"}
                                 name={"response1"}
@@ -50,10 +40,10 @@ export function BasicQuestions(): React.JSX.Element{
                             />
                         ))}
                     </Form.Group>
-                    <h3>Question 2</h3>
+                    <h3 style={{color: 'white'}}>2. I would like to write books or plays</h3>
                     <Form.Group controlId={"Question 2"}>
-                            {Q2ANSWER.map((ananswer2) => (
-                                <Form.Check
+                            {QTYPEAANSWER.map((ananswer2) => (
+                                <Form.Check style={{color: 'white'}}
                                 inline
                                 type={"radio"}
                                 name={"response2"}
@@ -67,10 +57,10 @@ export function BasicQuestions(): React.JSX.Element{
                             />
                         ))}
                     </Form.Group>
-                    <h3>Question 3</h3>
+                    <h3 style={{color: 'white'}}>3. I would like to install software across computers on a large network</h3>
                     <Form.Group controlId={"Question 3"}>
-                            {Q3ANSWER.map((ananswer3) => (
-                                <Form.Check
+                            {QTYPEAANSWER.map((ananswer3) => (
+                                <Form.Check style={{color: 'white'}}
                                 inline
                                 type={"radio"}
                                 name={"response3"}
@@ -84,7 +74,42 @@ export function BasicQuestions(): React.JSX.Element{
                             />
                         ))}
                 </Form.Group>
+                <h3 style={{color: 'white'}}>4. I would like to study ways to reduce water pollution</h3>
+                    <Form.Group controlId={"Question 4"}>
+                            {QTYPEAANSWER.map((ananswer4) => (
+                                <Form.Check style={{color: 'white'}}
+                                inline
+                                type={"radio"}
+                                name={"response4"}
+                                key={ananswer4}
+                                value={ananswer4}
+                                label={ananswer4}
+                                onChange={(e) => {
+                                    setAnswer4(e.target.value);
+                                }}
+                                checked={answer4 === ananswer4}
+                            />
+                        ))}
+                </Form.Group>
+                <h3 style={{color: 'white'}}>5. I would like to repair household appliances</h3>
+                    <Form.Group controlId={"Question 5"}>
+                            {QTYPEAANSWER.map((ananswer5) => (
+                                <Form.Check style={{color: 'white'}}
+                                inline
+                                type={"radio"}
+                                name={"response5"}
+                                key={ananswer5}
+                                value={ananswer5}
+                                label={ananswer5}
+                                onChange={(e) => {
+                                    setAnswer5(e.target.value);
+                                }}
+                                checked={answer5 === ananswer5}
+                            />
+                        ))}
+                </Form.Group>
                 </div>
+            </div>    
         </span>
     )
 }

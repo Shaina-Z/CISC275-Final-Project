@@ -1,5 +1,9 @@
 .Basic-Questions {
     text-align: center;
+    background-color: darkblue;
+    border-radius: 30px;
+    padding: 15px;
+    top: 67%;
 }
 
 .Detailed-Question{
@@ -8,4 +12,13 @@
 
 .header{
     text-transform: bold;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    min-height: 10vh;
+    top: 40%;
 }
