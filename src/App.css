@@ -135,6 +135,16 @@
   text-wrap:balance;
   padding:25px;
   border-style: solid;
+  width: 75%;
+}
+
+.Detailed-Questions header {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.Detailed-Questions small {
+  font-size: 50%;
 }
 
 @keyframes App-logo-spin {
