@@ -45,7 +45,7 @@ export function BasicQuestions(): React.JSX.Element{
         <span>  
             <div className="page-wrapper">
                 <div className = "Basic-Questions">
-                    <header style={{fontSize:40}}> Basic Quiz</header>
+                    <header className="Basic-Title" style={{fontSize:40}}> Basic Quiz</header>
                     <h3 style={{color: 'white'}}>1. I would like to develop new medicine</h3>
                     <Form.Group controlId={"Question 1"}>
                             {QTYPEAANSWER.map((ananswer) => (
