@@ -113,6 +113,7 @@ export function BasicQuestions(): React.JSX.Element{
                                 label={ananswer4}
                                 onChange={(e) => {
                                     setAnswer4(e.target.value);
+                                    UpdateProgress();
                                 }}
                                 checked={answer4 === ananswer4}
                             />
@@ -130,6 +131,7 @@ export function BasicQuestions(): React.JSX.Element{
                                 label={ananswer5}
                                 onChange={(e) => {
                                     setAnswer5(e.target.value);
+                                    UpdateProgress();
                                 }}
                                 checked={answer5 === ananswer5}
                             />
