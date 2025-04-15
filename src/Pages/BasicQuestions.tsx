@@ -115,7 +115,7 @@ export function BasicQuestions(): React.JSX.Element{
                                     setAnswer4(e.target.value);
                                     UpdateProgress();
                                 }}
-                                checked={answer4 === ananswer4}
+                                //checked={answer4 === ananswer4}
                             />
                         ))}
                 </Form.Group>
@@ -133,7 +133,7 @@ export function BasicQuestions(): React.JSX.Element{
                                     setAnswer5(e.target.value);
                                     UpdateProgress();
                                 }}
-                                checked={answer5 === ananswer5}
+                                //checked={answer5 === ananswer5}
                             />
                         ))}
                 </Form.Group>
