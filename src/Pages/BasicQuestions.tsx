@@ -78,7 +78,7 @@ export function BasicQuestions(): React.JSX.Element{
                                      );
                                      UpdateProgress();
                                 }}
-                                //checked={answer3 !== ananswer3}
+                                ///checked={answer3 !== ananswer3}
                             />
                         ))}
                 </Form.Group>
