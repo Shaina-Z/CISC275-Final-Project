@@ -145,6 +145,3 @@ export function BasicQuestions(): React.JSX.Element{
     )
 }
 
-function UpdateProgress() {
-    throw new Error('Function not implemented.');
-}
