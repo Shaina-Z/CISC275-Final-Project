@@ -11,10 +11,11 @@ export function DetailedQuestions(): React.JSX.Element{
             q7: "Type your answer here!"
         }
     );
-
+    const [progress,setProgress]=useState<number>(0)
     function updateAnswer(event: React.ChangeEvent<HTMLTextAreaElement>){
         const {name, value} = event.target
         setResponse(prev => ({...prev, [name]: value}));
+        setProgress(progress+1);
     }
     
     return(
@@ -92,6 +93,8 @@ export function DetailedQuestions(): React.JSX.Element{
                     onChange={updateAnswer} />
                 </Form.Group>
             </div>
+            <progress value={progress} max={7} ></progress>
+                <div className='Ready' hidden={progress<=7}>Ready to Submit?</div>
             <small>
                 {response.q5.length} Characters
             </small>
