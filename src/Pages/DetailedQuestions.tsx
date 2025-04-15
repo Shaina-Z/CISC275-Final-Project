@@ -94,7 +94,7 @@ export function DetailedQuestions(): React.JSX.Element{
                 </Form.Group>
             </div>
             <progress value={progress} max={7} ></progress>
-                <div className='Ready' hidden={progress<=7}>Ready to Submit?</div>
+                <div hidden={progress<=7}>Ready to Submit?</div>
             <small>
                 {response.q5.length} Characters
             </small>

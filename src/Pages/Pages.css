@@ -5,7 +5,9 @@
     padding: 15px;
     top: 67%;
 }
-
+.Ready{
+    color: white;
+}
 .Detailed-Question{
     text-align: center;
 }
