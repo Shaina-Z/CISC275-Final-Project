@@ -35,7 +35,7 @@ export function BasicQuestions(): React.JSX.Element{
                                 type={"radio"}
                                 name={"response1"}
                                 key={ananswer}
-                                value={ananswer}
+                                value={answer1}
                                 label={ananswer}
                                 onChange={(e) => {
                                     setAnswer1(e.target.value);
@@ -53,7 +53,7 @@ export function BasicQuestions(): React.JSX.Element{
                                 type={"radio"}
                                 name={"response2"}
                                 key={ananswer2}
-                                value={ananswer2}
+                                value={answer2}
                                 label={ananswer2}
                                 onChange={(e) => {
                                     setAnswer2(e.target.value);
@@ -71,7 +71,7 @@ export function BasicQuestions(): React.JSX.Element{
                                 type={"radio"}
                                 name={"response3"}
                                 key={ananswer3}
-                                value={ananswer3}
+                                value={answer3}
                                 label={ananswer3}
                                 onChange={(e) => {
                                     setAnswer3(e.target.value
@@ -90,7 +90,7 @@ export function BasicQuestions(): React.JSX.Element{
                                 type={"radio"}
                                 name={"response4"}
                                 key={ananswer4}
-                                value={ananswer4}
+                                value={answer4}
                                 label={ananswer4}
                                 onChange={(e) => {
                                     setAnswer4(e.target.value);
@@ -108,7 +108,7 @@ export function BasicQuestions(): React.JSX.Element{
                                 type={"radio"}
                                 name={"response5"}
                                 key={ananswer5}
-                                value={ananswer5}
+                                value={answer5}
                                 label={ananswer5}
                                 onChange={(e) => {
                                     setAnswer5(e.target.value);
