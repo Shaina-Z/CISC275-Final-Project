@@ -24,7 +24,7 @@ export function DetailedQuestions(): React.JSX.Element{
             <header> Detailed Quiz</header> 
             <div className = "Detailed-Question">
                 <Form.Group controlId="formQuestion1">
-                <Form.Label>Question 1:</Form.Label>
+                <Form.Label>What kind of work environment sounds most appealing to you?</Form.Label>
                 <Form.Control
                     as="textarea"
                     rows={3}
@@ -39,7 +39,7 @@ export function DetailedQuestions(): React.JSX.Element{
 
             <div className = "Detailed-Question">
                 <Form.Group controlId="formQuestion2">
-                <Form.Label>Question 2:</Form.Label>
+                <Form.Label>What kinds of problems do you enjoy solving?</Form.Label>
                 <Form.Control
                     as="textarea"
                     rows={3}
@@ -54,7 +54,7 @@ export function DetailedQuestions(): React.JSX.Element{
 
             <div className = "Detailed-Question">
                 <Form.Group controlId="formQuestion3">
-                <Form.Label>Question 3:</Form.Label>
+                <Form.Label>Do you care more about the kind of work you do than the pay?</Form.Label>
                 <Form.Control
                     as="textarea"
                     rows={3}
@@ -69,7 +69,7 @@ export function DetailedQuestions(): React.JSX.Element{
 
             <div className = "Detailed-Question">
                 <Form.Group controlId="formQuestion4">
-                <Form.Label>Question 4:</Form.Label>
+                <Form.Label>When faced with a problem, how do you tend to respond, either instinctively or analytically?</Form.Label>
                 <Form.Control
                     as="textarea"
                     rows={3}
@@ -84,7 +84,7 @@ export function DetailedQuestions(): React.JSX.Element{
 
             <div className = "Detailed-Question">
                 <Form.Group controlId="formQuestion5">
-                <Form.Label>Question 5:</Form.Label>
+                <Form.Label>What kind of learning or training appeals to you most?</Form.Label>
                 <Form.Control
                     as="textarea"
                     rows={3}
@@ -93,11 +93,42 @@ export function DetailedQuestions(): React.JSX.Element{
                     onChange={updateAnswer} />
                 </Form.Group>
             </div>
-            <progress value={progress} max={7} ></progress>
-                <div hidden={progress<=7}>Ready to Submit?</div>
             <small>
                 {response.q5.length} Characters
             </small>
+
+            <div className = "Detailed-Question">
+                <Form.Group controlId="formQuestion5">
+                <Form.Label>If you had unlimited time and resources, what type of project would you love to start?</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
+                    name="q6"
+                    value={response.q6}
+                    onChange={updateAnswer} />
+                </Form.Group>
+            </div>
+            <small>
+                {response.q6.length} Characters
+            </small>
+
+            <div className = "Detailed-Question">
+                <Form.Group controlId="formQuestion5">
+                <Form.Label>What would make your work feel meaningful or fulfilling?</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
+                    name="q7"
+                    value={response.q7}
+                    onChange={updateAnswer} />
+                </Form.Group>
+            </div>
+            <small>
+                {response.q7.length} Characters
+            </small>
+
+            <progress value={progress} max={7} ></progress>
+            <div hidden={progress<=7}>Ready to Submit?</div>
         </span>
     )
 }
