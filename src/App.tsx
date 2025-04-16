@@ -61,16 +61,15 @@ function App() {
             >
               Home Page
             </Button>
-      <div className="take-quiz-button" hidden = {isHome}>Take our free career quiz now!</div>
+      <div className="take-quiz-block" hidden = {isHome}>Take our free career quiz now!</div>
       <div hidden={isHome} className="fade-strip">Career Helpi Quiz</div>
       <header className="App-header">
         <div className="Basic-Questions" hidden={notBasic}>
         <BasicQuestions />
+        </div>
         <div className="Detailed-Questions" hidden={notDetailed}>
         <DetailedQuestions />
       </div>
-        </div>
-        </header>
         <p className ="basic" style= {{zIndex: 5}} hidden = {isHome}>Not sure where to start? Answer a few small questions to get some starting points on a career path.
         <Button style={{backgroundColor: 'darkblue'}}//Flips the visibility of the Basic and Home pages
               onClick={() => {
@@ -95,7 +94,7 @@ function App() {
               Detailed Quiz
             </Button> </p>
           
-            
+            </header>
         <a
           className="App-link"
           href="https://reactjs.org"
