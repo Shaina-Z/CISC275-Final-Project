@@ -17,6 +17,8 @@ export function BasicQuestions(): React.JSX.Element{
         const [answer3, setAnswer3] = useState<string>(QTYPEAANSWER[0]);
         const [answer4, setAnswer4] = useState<string>(QTYPEAANSWER[0]);
         const [answer5, setAnswer5] = useState<string>(QTYPEAANSWER[0]);
+        const [answer6, setAnswer6] = useState<string>(QTYPEAANSWER[0]);
+        const [answer7, setAnswer7] = useState<string>(QTYPEAANSWER[0]);
         const [progress,setProgress]=useState<number>(0)
         function UpdateProgress(){
             setProgress(progress+1);
@@ -115,6 +117,42 @@ export function BasicQuestions(): React.JSX.Element{
                                     UpdateProgress();
                                 }}
                                 //checked={answer5 !== ananswer5}
+                            />
+                        ))}
+                </Form.Group>
+                <h3 style={{color: 'white'}}>6. I would like to compose or arrange music</h3>
+                    <Form.Group controlId={"Question 6"}>
+                            {QTYPEAANSWER.map((ananswer6) => (
+                                <Form.Check style={{color: 'white'}}
+                                inline
+                                type={"radio"}
+                                name={"response6"}
+                                key={ananswer6}
+                                value={answer6}
+                                label={ananswer6}
+                                onChange={(e) => {
+                                    setAnswer6(e.target.value);
+                                    UpdateProgress();
+                                }}
+                                //checked={answer6 !== ananswer6}
+                            />
+                        ))}
+                </Form.Group>
+                <h3 style={{color: 'white'}}>7. I would like to manage a department in a large company</h3>
+                    <Form.Group controlId={"Question 7"}>
+                            {QTYPEAANSWER.map((ananswer7) => (
+                                <Form.Check style={{color: 'white'}}
+                                inline
+                                type={"radio"}
+                                name={"response7"}
+                                key={ananswer7}
+                                value={answer7}
+                                label={ananswer7}
+                                onChange={(e) => {
+                                    setAnswer7(e.target.value);
+                                    UpdateProgress();
+                                }}
+                                //checked={answer7 !== ananswer7}
                             />
                         ))}
                 </Form.Group>
