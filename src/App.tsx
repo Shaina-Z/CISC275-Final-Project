@@ -44,8 +44,8 @@ function App() {
                 borderRadius: '20px',
                 cursor: 'pointer',
                 position: 'absolute',
-                top: '60px',
-                left: '60px',
+                top: '45px',
+                left: '45px',
                 zIndex: 9999,}}
               onClick={() => {
                 if (!notBasic){
@@ -129,7 +129,7 @@ function App() {
             height: 'auto',
           }} 
         />
-        <img hidden={!isHome}
+        <img hidden={!notDetailed}
           src={stockImage2}
           alt="stockimage2" 
           style={{
@@ -137,7 +137,7 @@ function App() {
             position: 'fixed',
             top: 0,
             right: 10,
-            width: '250px',
+            width: '240px',
             height: 'auto',
           }} 
         />
