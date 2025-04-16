@@ -60,8 +60,8 @@ html, body {
   padding: 40px;
   background-color: darkblue;
   color: white;
-  left: 20%;
-  top: 27%;
+  left: 12.5%;
+  top: 12%;
   display: flex;
   font-family: 'Karla', sans-serif;
   justify-content: center;
@@ -103,28 +103,29 @@ html, body {
   color: white;
 } 
 
-.basic, .detailed{
+.basic{
   background-color: #d3dced;
-  width: 1000px;
+  width: 900px;
   padding: 15px;
   border-radius: 10px;
   text-align: center;
   display: grid;
   place-items: center;
   text-wrap:balance;
-  top: unset;
   border-style: solid;
-  position: relative;
-  left: unset;
+  position: fixed;
   z-index: 1000;
-  transform: none;
+  top:32%;
+  left: 40%;
+  height: 150px;
+  transform: translateX(-50%);
   margin: 40px auto;
 }
 
-/*
 .detailed{
+  margin-top: 50px;
   background-color: #d3dced;
-  width: 1000px;
+  width: 900px;
   text-wrap:balance;
   padding:15px;
   border-style: solid;
@@ -133,10 +134,12 @@ html, body {
   border-radius: 10px;
   position: fixed;
   display: grid;
-  top: 58%;
-  left: 50%;
+  z-index: 1001;
+  top: 50%;
+  left: 40%;
+  height: 150px;
   transform: translateX(-50%);
-}*/
+}
 
 .Detailed-Questions{
   text-wrap:balance;
