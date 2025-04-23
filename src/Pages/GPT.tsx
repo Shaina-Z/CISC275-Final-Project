@@ -1,15 +1,11 @@
 import OpenAI from "openai";
-const client = new OpenAI();
+import{responses} from "openai";
+const openai = new OpenAI();
 
-const completion = async()=>{await client.chat.completions.create({
-    model: "gpt-4.1",
-    messages: [
-        {
-            role: "user",
-            content: "Write a one-sentence bedtime story about a unicorn.",
-        },
-    ],
+const response = async()=>{await openai.responses.create({
+    model: "gpt-4o",
+    input: "Tell me a three sentence bedtime story about a unicorn."
 });
 }
 
-console.log(completion.choices[0].message.content);
+console.log(response);
