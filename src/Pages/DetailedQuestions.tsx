@@ -178,16 +178,20 @@ export function DetailedQuestions(): React.JSX.Element{
                 </small>
             </div>
 
+            
+            <progress value={progress} max={7} ></progress>
+            <br></br>
+
             <Button hidden = {current === 0}
             onClick={() => {prevQuestion(current)}}
             >Back</Button>
-
-            <progress value={progress} max={7} ></progress>
-            <div hidden={progress<=7}>Ready to Submit?</div>
+            
 
             <Button hidden = {current === 6}
             onClick={() => {nextQuestion(current)}}
             >Next</Button>
+
+        <div hidden={progress<=7}>Ready to Submit?</div>
         </span>
     )
 }
