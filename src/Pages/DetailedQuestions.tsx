@@ -17,6 +17,30 @@ export function DetailedQuestions(): React.JSX.Element{
         setResponse(prev => ({...prev, [name]: value}));
         setProgress(progress+1);
     }
+
+    const [question, setQuestion] = useState(
+        {
+            dq1: false, dq2: true, dq3: true, dq4: true,
+            dq5: true, dq6: true, dq7: true
+        }
+    );
+    function updateQuestion(index: number){
+        const current = `dq${index + 1}` as keyof typeof question;
+
+        setQuestion(() => {
+            const newVisibility = {
+                dq1: true,
+                dq2: true,
+                dq3: true,
+                dq4: true,
+                dq5: true,
+                dq6: true,
+                dq7: true
+            };
+            newVisibility[current] = false;
+            return newVisibility;
+        });
+    }
     
     return(
         
