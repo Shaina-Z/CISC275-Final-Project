@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Pages.css';
-import {Form } from 'react-bootstrap';
+import {Button, Form } from 'react-bootstrap';
 
 
 
@@ -24,8 +24,12 @@ export function DetailedQuestions(): React.JSX.Element{
             dq5: true, dq6: true, dq7: true
         }
     );
-    function updateQuestion(index: number){
-        const current = `dq${index + 1}` as keyof typeof question;
+    const [current, setCurrent] = useState<number>(0);
+    
+    function nextQuestion(index: number){
+        const newIndex = index + 1
+        const currentq = `dq${newIndex + 1}` as keyof typeof question;
+        setCurrent(current + 1);
 
         setQuestion(() => {
             const newVisibility = {
@@ -37,7 +41,27 @@ export function DetailedQuestions(): React.JSX.Element{
                 dq6: true,
                 dq7: true
             };
-            newVisibility[current] = false;
+            newVisibility[currentq] = false;
+            return newVisibility;
+        });
+    }
+
+    function prevQuestion(index: number){
+        const newIndex = index - 1
+        const currentq = `dq${newIndex + 1}` as keyof typeof question;
+        setCurrent(current - 1);
+
+        setQuestion(() => {
+            const newVisibility = {
+                dq1: true,
+                dq2: true,
+                dq3: true,
+                dq4: true,
+                dq5: true,
+                dq6: true,
+                dq7: true
+            };
+            newVisibility[currentq] = false;
             return newVisibility;
         });
     }
@@ -151,8 +175,16 @@ export function DetailedQuestions(): React.JSX.Element{
                 </small>
             </div>
 
+            <Button hidden = {current === 0}
+            onClick={() => {prevQuestion(current)}}
+            >Back</Button>
+
             <progress value={progress} max={7} ></progress>
             <div hidden={progress<=7}>Ready to Submit?</div>
+
+            <Button hidden = {current === 6}
+            onClick={() => {nextQuestion(current)}}
+            >Next</Button>
         </span>
     )
 }
