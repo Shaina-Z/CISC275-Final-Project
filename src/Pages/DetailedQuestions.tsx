@@ -69,7 +69,10 @@ export function DetailedQuestions(): React.JSX.Element{
     return(
         
         <span> 
-            <header> Detailed Quiz</header> 
+            <header> 
+                <h1>Detailed Quiz</h1>
+                <h2>Question {current + 1}</h2>
+            </header> 
             <div className = "Detailed-Question" hidden = {question.dq1}>
                 <Form.Group controlId="formQuestion1">
                 <Form.Label>What kind of work environment sounds most appealing to you?</Form.Label>
