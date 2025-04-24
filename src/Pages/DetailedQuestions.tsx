@@ -46,7 +46,7 @@ export function DetailedQuestions(): React.JSX.Element{
         
         <span> 
             <header> Detailed Quiz</header> 
-            <div className = "Detailed-Question">
+            <div className = "Detailed-Question" hidden = {question.dq1}>
                 <Form.Group controlId="formQuestion1">
                 <Form.Label>What kind of work environment sounds most appealing to you?</Form.Label>
                 <Form.Control
@@ -56,12 +56,12 @@ export function DetailedQuestions(): React.JSX.Element{
                     value={response.q1}
                     onChange={updateAnswer} />
                 </Form.Group>
-            </div>
-            <small>
+                <small>
                 {response.q1.length} Characters
-            </small>
+                </small>
+            </div>
 
-            <div className = "Detailed-Question">
+            <div className = "Detailed-Question" hidden = {question.dq2}>
                 <Form.Group controlId="formQuestion2">
                 <Form.Label>What kinds of problems do you enjoy solving?</Form.Label>
                 <Form.Control
@@ -71,12 +71,12 @@ export function DetailedQuestions(): React.JSX.Element{
                     value={response.q2}
                     onChange={updateAnswer} />
                 </Form.Group>
-            </div>
-            <small>
+                <small>
                 {response.q2.length} Characters
-            </small>
+                </small>
+            </div>
 
-            <div className = "Detailed-Question">
+            <div className = "Detailed-Question" hidden = {question.dq3}>
                 <Form.Group controlId="formQuestion3">
                 <Form.Label>Do you care more about the kind of work you do than the pay?</Form.Label>
                 <Form.Control
@@ -86,12 +86,12 @@ export function DetailedQuestions(): React.JSX.Element{
                     value={response.q3}
                     onChange={updateAnswer} />
                 </Form.Group>
-            </div>
-            <small>
+                <small>
                 {response.q3.length} Characters
-            </small>
+                </small>
+            </div>
 
-            <div className = "Detailed-Question">
+            <div className = "Detailed-Question" hidden = {question.dq4}>
                 <Form.Group controlId="formQuestion4">
                 <Form.Label>When faced with a problem, how do you tend to respond, either instinctively or analytically?</Form.Label>
                 <Form.Control
@@ -101,12 +101,12 @@ export function DetailedQuestions(): React.JSX.Element{
                     value={response.q4}
                     onChange={updateAnswer} />
                 </Form.Group>
-            </div>
-            <small>
+                <small>
                 {response.q4.length} Characters
-            </small>
+                </small>
+            </div>
 
-            <div className = "Detailed-Question">
+            <div className = "Detailed-Question" hidden = {question.dq5}>
                 <Form.Group controlId="formQuestion5">
                 <Form.Label>What kind of learning or training appeals to you most?</Form.Label>
                 <Form.Control
@@ -116,12 +116,12 @@ export function DetailedQuestions(): React.JSX.Element{
                     value={response.q5}
                     onChange={updateAnswer} />
                 </Form.Group>
-            </div>
-            <small>
+                <small>
                 {response.q5.length} Characters
-            </small>
+                </small>
+            </div>
 
-            <div className = "Detailed-Question">
+            <div className = "Detailed-Question" hidden = {question.dq6}>
                 <Form.Group controlId="formQuestion5">
                 <Form.Label>If you had unlimited time and resources, what type of project would you love to start?</Form.Label>
                 <Form.Control
@@ -131,12 +131,12 @@ export function DetailedQuestions(): React.JSX.Element{
                     value={response.q6}
                     onChange={updateAnswer} />
                 </Form.Group>
-            </div>
-            <small>
+                <small>
                 {response.q6.length} Characters
-            </small>
+                </small>
+            </div>
 
-            <div className = "Detailed-Question">
+            <div className = "Detailed-Question" hidden = {question.dq7}>
                 <Form.Group controlId="formQuestion5">
                 <Form.Label>What would make your work feel meaningful or fulfilling?</Form.Label>
                 <Form.Control
@@ -146,10 +146,10 @@ export function DetailedQuestions(): React.JSX.Element{
                     value={response.q7}
                     onChange={updateAnswer} />
                 </Form.Group>
-            </div>
-            <small>
+                <small>
                 {response.q7.length} Characters
-            </small>
+                </small>
+            </div>
 
             <progress value={progress} max={7} ></progress>
             <div hidden={progress<=7}>Ready to Submit?</div>
