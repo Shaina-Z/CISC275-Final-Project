@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Pages.css';
-import {Form } from 'react-bootstrap';
+import {Button, Form } from 'react-bootstrap';
 
 
 const QTYPEAANSWER = [
@@ -26,7 +26,18 @@ export function BasicQuestions(): React.JSX.Element{
     "I would like to install software across computers on a large network","I would like to study ways to reduce water pollution",
 "I would like to repair household appliances","I would like to compose or arrange music",
 " would like to manage a department in a large company"]
-        function UpdateProgress(){
+    async function handleSubmitToGPT(){
+        const response = await fetch("/api/run-gpt",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({answers:basic_answers})
+        });
+        const data = await response.json();
+        console.log("Response:", data.result);
+    }    
+    function UpdateProgress(){
             setProgress(progress+1);
             console.log(progress);
           }
@@ -164,6 +175,7 @@ export function BasicQuestions(): React.JSX.Element{
                 </Form.Group>
                 <progress value={progress} max={7} ></progress>
                 <div className='Ready' hidden={progress<=7}>Ready to Submit?</div>
+                <Button onClick={handleSubmitToGPT}>Submit</Button>
                 </div>
             </div>    
         </span>
