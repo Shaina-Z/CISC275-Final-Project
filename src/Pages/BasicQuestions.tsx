@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Pages.css';
 import {Form } from 'react-bootstrap';
 
+
 const QTYPEAANSWER = [
     "Strongly disagree",
     "Disagree",
@@ -20,6 +21,11 @@ export function BasicQuestions(): React.JSX.Element{
         const [answer6, setAnswer6] = useState<string>(QTYPEAANSWER[0]);
         const [answer7, setAnswer7] = useState<string>(QTYPEAANSWER[0]);
         const [progress,setProgress]=useState<number>(0)
+        const basic_answers=[answer1,answer2,answer3,answer4,answer5,answer6,answer7]
+        const questions =["I would like to develop new medicine:","I would like to write books or plays:",
+    "I would like to install software across computers on a large network","I would like to study ways to reduce water pollution",
+"I would like to repair household appliances","I would like to compose or arrange music",
+" would like to manage a department in a large company"]
         function UpdateProgress(){
             setProgress(progress+1);
             console.log(progress);

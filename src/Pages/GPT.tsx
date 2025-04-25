@@ -1,19 +1,16 @@
 import OpenAI from "openai";
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, 
-});
+export async function runGPT(answers: string[]) {
+  const message = `Quiz responses:\n${answers.join("\n")}\nWhat careers would fit?`;
 
-async function run() {
-  const chatCompletion = await openai.chat.completions.create({
-    model: "gpt-4o", 
+  const res = await openai.chat.completions.create({
+    model: "gpt-4o",
     messages: [
-      { role: "system", content: "You are a helpful assistant." },
-      { role: "user", content: "What's the weather like in Paris?" },
+      { role: "system", content: "You are a helpful career assistant." },
+      { role: "user", content: message },
     ],
   });
 
-  console.log(chatCompletion.choices[0].message.content);
-}
-
-run();
+  return res.choices[0].message.content;
+} 
