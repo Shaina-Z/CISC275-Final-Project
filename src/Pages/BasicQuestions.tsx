@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Pages.css';
 import {Button, Form } from 'react-bootstrap';
+import genReport from './GPT';
 
 
 const QTYPEAANSWER = [
@@ -21,22 +22,17 @@ export function BasicQuestions(): React.JSX.Element{
         const [answer6, setAnswer6] = useState<string>(QTYPEAANSWER[0]);
         const [answer7, setAnswer7] = useState<string>(QTYPEAANSWER[0]);
         const [progress,setProgress]=useState<number>(0)
-        const basic_answers=[answer1,answer2,answer3,answer4,answer5,answer6,answer7]
-        const questions =["I would like to develop new medicine:","I would like to write books or plays:",
-    "I would like to install software across computers on a large network","I would like to study ways to reduce water pollution",
-"I would like to repair household appliances","I would like to compose or arrange music",
-" would like to manage a department in a large company"]
-    async function handleSubmitToGPT(){
-        const response = await fetch("/api/run-gpt",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({answers:basic_answers})
-        });
-        const data = await response.json();
-        console.log("Response:", data.result);
-    }    
+        const basic_answers=["I would like to develop new medicine: ${answer1}","I would like to write books or plays: ${answer2}",
+        "I would like to install software across computers on a large network: ${answer3}"
+        ,"I would like to study ways to reduce water pollution: ${answer4}"
+        ,"I would like to repair household appliances: ${answer5}","I would like to compose or arrange music: ${answer6}",
+        "I would like to manage a department in a large company: ${answer7}"]
+        async function generateReportForUser() {
+            const userResponses=basic_answers.join();
+            const result = await genReport(userResponses);
+            console.log(result);  
+        }
+  
     function UpdateProgress(){
             setProgress(progress+1);
             console.log(progress);
@@ -175,7 +171,7 @@ export function BasicQuestions(): React.JSX.Element{
                 </Form.Group>
                 <progress value={progress} max={7} ></progress>
                 <div className='Ready' hidden={progress<=7}>Ready to Submit?</div>
-                <Button onClick={handleSubmitToGPT}>Submit</Button>
+                <Button onClick={generateReportForUser}>Submit</Button>
                 </div>
             </div>    
         </span>
