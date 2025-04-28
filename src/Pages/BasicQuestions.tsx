@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Pages.css';
 import {Button, Form } from 'react-bootstrap';
-import genReport from './GPT';
+import genResponse from './GPT';
 
 
 const QTYPEAANSWER = [
@@ -21,16 +21,18 @@ export function BasicQuestions(): React.JSX.Element{
         const [answer5, setAnswer5] = useState<string>(QTYPEAANSWER[0]);
         const [answer6, setAnswer6] = useState<string>(QTYPEAANSWER[0]);
         const [answer7, setAnswer7] = useState<string>(QTYPEAANSWER[0]);
+        const [response, setResponse]=useState<string>("");
         const [progress,setProgress]=useState<number>(0)
-        const basic_answers=["I would like to develop new medicine: ${answer1}","I would like to write books or plays: ${answer2}",
-        "I would like to install software across computers on a large network: ${answer3}"
-        ,"I would like to study ways to reduce water pollution: ${answer4}"
-        ,"I would like to repair household appliances: ${answer5}","I would like to compose or arrange music: ${answer6}",
-        "I would like to manage a department in a large company: ${answer7}"]
+        const basic_answers=['I would like to develop new medicine: ${answer1}','I would like to write books or plays: ${answer2}',
+        'I would like to install software across computers on a large network: ${answer3}'
+        ,'I would like to study ways to reduce water pollution: ${answer4}'
+        ,'I would like to repair household appliances: ${answer5}','I would like to compose or arrange music: ${answer6}',
+        'I would like to manage a department in a large company: ${answer7}']
         async function generateReportForUser() {
             const userResponses=basic_answers.join();
-            const result = await genReport(userResponses);
+            const result = await genResponse(userResponses);
             console.log(result);  
+            setResponse(result);
         }
   
     function UpdateProgress(){
@@ -170,9 +172,10 @@ export function BasicQuestions(): React.JSX.Element{
                         ))}
                 </Form.Group>
                 <progress value={progress} max={7} ></progress>
-                <div className='Ready' hidden={progress<=7}>Ready to Submit?</div>
-                <Button onClick={generateReportForUser}>Submit</Button>
+                <div className='Ready' hidden={progress<=6}>Ready to Submit?</div>
+                <Button hidden={progress<=6}onClick={generateReportForUser}>Submit</Button>
                 </div>
+                <div className='Response'> {response} </div>
             </div>    
         </span>
     )
