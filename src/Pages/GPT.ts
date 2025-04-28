@@ -13,7 +13,7 @@ async function genResponse(responses: string) {
             messages: [{"role": "system", "content": "You are a helpful  career assistant."},
             {"role": "user", "content": "Based on these answers, what career would you recommend for this person? \n" 
                 + responses 
-                + "\n Additionally, what companies would you recommend?"},],
+                + "\n Additionally, what companies would you recommend? Give three examples and make them their own paragraphs"},],
             
             model: "gpt-4o",
   })
