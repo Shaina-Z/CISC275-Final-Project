@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Pages.css';
-import {Form } from 'react-bootstrap';
-
+import {Button, Form } from 'react-bootstrap';
+import genResponse from './GPT';
 
 
 export function DetailedQuestions(): React.JSX.Element{
@@ -11,13 +11,18 @@ export function DetailedQuestions(): React.JSX.Element{
             q7: "Type your answer here!"
         }
     );
-    const [progress,setProgress]=useState<number>(0)
+    const [progress,setProgress]=useState<number>(0);
+    const answers=[response.q1,response.q2,response.q3,response.q4,response.q5,response.q6,response.q7];
     function updateAnswer(event: React.ChangeEvent<HTMLTextAreaElement>){
         const {name, value} = event.target
         setResponse(prev => ({...prev, [name]: value}));
         setProgress(progress+1);
     }
-    
+    async function generateReportForUser() {
+        const userResponses=answers.join();
+        const result = await genResponse(userResponses);
+        console.log(result);  
+    }
     return(
         
         <span> 
@@ -129,6 +134,7 @@ export function DetailedQuestions(): React.JSX.Element{
 
             <progress value={progress} max={7} ></progress>
             <div hidden={progress<=7}>Ready to Submit?</div>
+            <Button hidden={progress<=6}onClick={generateReportForUser}>Submit</Button>
         </span>
     )
 }
