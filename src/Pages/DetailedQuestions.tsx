@@ -188,12 +188,12 @@ export function DetailedQuestions(): React.JSX.Element{
             <br></br>
 
             <Button hidden = {current === 0}
-            onClick={() => {prevQuestion(current)}}
+            onClick={() => {prevQuestion(current);setProgress(progress-1);}}
             >Back</Button>
             
 
             <Button hidden = {current === 6}
-            onClick={() => {nextQuestion(current)}}
+            onClick={() => {nextQuestion(current);setProgress(progress+1);}}
             >Next</Button>
 
         <div hidden={progress<=7}>Ready to Submit?</div>
