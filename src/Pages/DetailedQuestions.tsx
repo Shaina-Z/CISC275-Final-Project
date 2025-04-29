@@ -184,7 +184,7 @@ export function DetailedQuestions(): React.JSX.Element{
             </div>
 
             
-            <progress value={progress} max={7} ></progress>
+            <progress value={progress} max={6} ></progress>
             <br></br>
 
             <Button hidden = {current === 0}
@@ -197,6 +197,7 @@ export function DetailedQuestions(): React.JSX.Element{
             >Next</Button>
 
         <div hidden={progress<=7}>Ready to Submit?</div>
+        <Button hidden={progress<=5}onClick={generateReportForUser}>Submit</Button>
         </span>
     )
 }
