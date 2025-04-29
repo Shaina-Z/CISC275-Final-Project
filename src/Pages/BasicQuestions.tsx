@@ -23,10 +23,15 @@ export function BasicQuestions(): React.JSX.Element{
         const [answer7, setAnswer7] = useState<string>(QTYPEAANSWER[0]);
         const [response, setResponse]=useState<string>("");
         const [progress,setProgress]=useState<number>(0)
+        // eslint-disable-next-line no-template-curly-in-string
         const basic_answers=['I would like to develop new medicine: ${answer1}','I would like to write books or plays: ${answer2}',
+        // eslint-disable-next-line no-template-curly-in-string
         'I would like to install software across computers on a large network: ${answer3}'
+        // eslint-disable-next-line no-template-curly-in-string
         ,'I would like to study ways to reduce water pollution: ${answer4}'
+        // eslint-disable-next-line no-template-curly-in-string
         ,'I would like to repair household appliances: ${answer5}','I would like to compose or arrange music: ${answer6}',
+        // eslint-disable-next-line no-template-curly-in-string
         'I would like to manage a department in a large company: ${answer7}'];
         async function generateReportForUser() {
             const userResponses=basic_answers.join();
