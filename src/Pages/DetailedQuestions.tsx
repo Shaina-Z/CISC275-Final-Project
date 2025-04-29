@@ -11,11 +11,13 @@ export function DetailedQuestions(): React.JSX.Element{
             q7: "Type your answer here!"
         }
     );
+    const [gpt,setGPT]=useState("");
     const [progress,setProgress]=useState<number>(0);
     const answers=[response.q1,response.q2,response.q3,response.q4,response.q5,response.q6,response.q7];
     async function generateReportForUser() {
                 const result = await genResponse(answers.join());
                 console.log(result); 
+                setGPT(result);
             }
     function updateAnswer(event: React.ChangeEvent<HTMLTextAreaElement>){
         const {name, value} = event.target
@@ -198,6 +200,7 @@ export function DetailedQuestions(): React.JSX.Element{
 
         <div hidden={progress<=7}>Ready to Submit?</div>
         <Button hidden={progress<=5}onClick={generateReportForUser}>Submit</Button>
+        <div> {gpt} </div>
         </span>
     )
 }
