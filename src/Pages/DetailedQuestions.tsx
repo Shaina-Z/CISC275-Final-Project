@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Pages.css';
-import {Form } from 'react-bootstrap';
-
+import {Form,Button } from 'react-bootstrap';
+import genResponse from './GPT';
 
 
 export function DetailedQuestions(): React.JSX.Element{
@@ -13,12 +13,64 @@ export function DetailedQuestions(): React.JSX.Element{
     );
     const [progress,setProgress]=useState<number>(0);
     const answers=[response.q1,response.q2,response.q3,response.q4,response.q5,response.q6,response.q7];
+    async function generateReportForUser() {
+                const result = await genResponse(answers.join());
+                console.log(result); 
+            }
     function updateAnswer(event: React.ChangeEvent<HTMLTextAreaElement>){
         const {name, value} = event.target
         setResponse(prev => ({...prev, [name]: value}));
         setProgress(progress+1);
     }
+
+
+    const [question, setQuestion] = useState(
+        {
+            dq1: false, dq2: true, dq3: true, dq4: true,
+            dq5: true, dq6: true, dq7: true
+        }
+    );
+    const [current, setCurrent] = useState<number>(0);
+
+    function nextQuestion(index: number){
+        const newIndex = index + 1
+        const currentq = `dq${newIndex + 1}` as keyof typeof question;
+        setCurrent(current + 1);
+
+        setQuestion(() => {
+            const newVisibility = {
+                dq1: true,
+                dq2: true,
+                dq3: true,
+                dq4: true,
+                dq5: true,
+                dq6: true,
+                dq7: true
+            };
+            newVisibility[currentq] = false;
+            return newVisibility;
+        });
+    }
     
+    function prevQuestion(index: number){
+        const newIndex = index - 1
+        const currentq = `dq${newIndex + 1}` as keyof typeof question;
+        setCurrent(current - 1);
+
+        setQuestion(() => {
+            const newVisibility = {
+                dq1: true,
+                dq2: true,
+                dq3: true,
+                dq4: true,
+                dq5: true,
+                dq6: true,
+                dq7: true
+            };
+            newVisibility[currentq] = false;
+            return newVisibility;
+        });
+    }
     return(
         
         <span> 
@@ -133,7 +185,18 @@ export function DetailedQuestions(): React.JSX.Element{
 
             
             <progress value={progress} max={7} ></progress>
-            <div hidden={progress<=7}>Ready to Submit?</div>
+            <br></br>
+
+            <Button hidden = {current === 0}
+            onClick={() => {prevQuestion(current)}}
+            >Back</Button>
+            
+
+            <Button hidden = {current === 6}
+            onClick={() => {nextQuestion(current)}}
+            >Next</Button>
+
+        <div hidden={progress<=7}>Ready to Submit?</div>
         </span>
     )
 }
