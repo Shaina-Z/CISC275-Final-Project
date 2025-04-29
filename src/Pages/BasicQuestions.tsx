@@ -31,8 +31,8 @@ export function BasicQuestions(): React.JSX.Element{
         async function generateReportForUser() {
             const userResponses=basic_answers.join();
             const result = await genResponse(userResponses);
-            console.log(result);  
-            setResponse(result);
+            console.log(result); 
+            setResponse(result); 
         }
   
     function UpdateProgress(){
