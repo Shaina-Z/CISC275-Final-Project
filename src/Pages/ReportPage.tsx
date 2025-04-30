@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
 import './Pages.css';
-import {Form } from 'react-bootstrap';
 import stockImage3 from './stockimg3.png'
 
 interface reportStates {
