@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Pages.css';
 import {Button, Form } from 'react-bootstrap';
-import {Form,Button } from 'react-bootstrap';
 import genResponse from './GPT';
 
 
