@@ -1,10 +1,25 @@
 import React, { useState } from 'react';
 import './Pages.css';
-import {Form } from 'react-bootstrap';
+import {Button, Form } from 'react-bootstrap';
+
+interface detailedStates {
+    notDetailed: boolean;
+    setDetailed: React.Dispatch<React.SetStateAction<boolean>>;
+    notReport: boolean;
+    setReport: React.Dispatch<React.SetStateAction<boolean>>;
+  }
 
 
-
-export function DetailedQuestions(): React.JSX.Element{
+export function DetailedQuestions({
+    notDetailed,
+    setDetailed,
+    notReport,
+    setReport
+}: detailedStates): React.JSX.Element{
+    const SubmitButton = () => {
+        setDetailed(!notDetailed); 
+        setReport(!notReport);
+    }
     const [response, setResponse] = useState(
         { q1: "Type your answer here!", q2: "Type your answer here!", q3: "Type your answer here!",
             q4: "Type your answer here!", q5: "Type your answer here!", q6: "Type your answer here!",
@@ -128,7 +143,7 @@ export function DetailedQuestions(): React.JSX.Element{
             </small>
 
             <progress value={progress} max={7} ></progress>
-            <div hidden={progress<=7}>Ready to Submit?</div>
+            <Button onClick={SubmitButton} hidden={progress<=7}>Ready to Submit?</Button>
         </span>
     )
 }

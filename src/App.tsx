@@ -3,6 +3,7 @@ import './App.css';
 import './Pages/Pages.css'
 import {BasicQuestions} from './Pages/BasicQuestions';
 import {DetailedQuestions} from './Pages/DetailedQuestions';
+import {ReportPage} from './Pages/ReportPage';
 import { Button, Form } from 'react-bootstrap';
 import stockImage from './careerquizwithbackground.png';
 import stockImage2 from './stockimg2.png'
@@ -20,6 +21,7 @@ function App() {
     const [isHome, setHome] = useState<boolean>(false);
     const [notBasic, setBasic] = useState<boolean>(true);
     const [notDetailed, setDetailed] = useState<boolean>(true);
+    const [notReport, setReport] = useState<boolean>(true);
 
   const [key, setKey] = useState<string>(keyData); //for api key input
   
@@ -56,6 +58,10 @@ function App() {
                   setDetailed(!notDetailed);
                   setHome(!isHome);
                 }
+                if (!notReport){
+                  setReport(!notReport);
+                  setHome(!isHome);
+                }
                 console.log("User was sent to the Home Page");
               }}
             >
@@ -64,11 +70,14 @@ function App() {
       <div className="take-quiz-block" hidden = {isHome}>Take our free career quiz now!</div>
       <div hidden={isHome} className="fade-strip">Career Helpi Quiz</div>
       <header className="App-header">
+        <div className="Report-Page" hidden={notReport}>
+          <ReportPage notReport={notReport} setReport={setReport}/>
+        </div>
         <div className="Basic-Questions" hidden={notBasic}>
-        <BasicQuestions />
+        <BasicQuestions notBasic={notBasic} setBasic={setBasic} notReport={notReport} setReport={setReport}/>
         </div>
         <div className="Detailed-Questions" hidden={notDetailed}>
-        <DetailedQuestions />
+        <DetailedQuestions notDetailed={notDetailed} setDetailed={setDetailed} notReport={notReport} setReport={setReport}/>
       </div>
         <p className ="basic" style= {{zIndex: 5}} hidden = {isHome}>Not sure where to start? Answer a few small questions to get some starting points on a career path.
         <Button style={{backgroundColor: 'darkblue'}}//Flips the visibility of the Basic and Home pages
@@ -129,7 +138,7 @@ function App() {
             height: 'auto',
           }} 
         />
-        <img hidden={!notDetailed}
+        <img hidden={notBasic}
           src={stockImage2}
           alt="stockimage2" 
           style={{

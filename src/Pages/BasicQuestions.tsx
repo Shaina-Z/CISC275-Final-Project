@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Pages.css';
-import {Form } from 'react-bootstrap';
+import {Button, Form } from 'react-bootstrap';
+
 
 const QTYPEAANSWER = [
     "Strongly disagree",
@@ -10,8 +11,24 @@ const QTYPEAANSWER = [
     "Strongly agree"
 ]
 
+interface basicStates {
+    notBasic: boolean;
+    setBasic: React.Dispatch<React.SetStateAction<boolean>>;
+    notReport: boolean;
+    setReport: React.Dispatch<React.SetStateAction<boolean>>;
+  }
 
-export function BasicQuestions(): React.JSX.Element{
+export function BasicQuestions({
+    notBasic,
+    setBasic,
+    notReport,
+    setReport
+}: basicStates): React.JSX.Element{
+        const SubmitButton = () => {
+            setBasic(!notBasic); 
+            setReport(!notReport);
+        }
+
         const [answer1, setAnswer1] = useState<string>(QTYPEAANSWER[0]);
         const [answer2, setAnswer2] = useState<string>(QTYPEAANSWER[0]);
         const [answer3, setAnswer3] = useState<string>(QTYPEAANSWER[0]);
@@ -157,7 +174,7 @@ export function BasicQuestions(): React.JSX.Element{
                         ))}
                 </Form.Group>
                 <progress value={progress} max={7} ></progress>
-                <div className='Ready' hidden={progress<=7}>Ready to Submit?</div>
+                <Button onClick={SubmitButton} hidden={progress<=7}>Ready to Submit?</Button>
                 </div>
             </div>    
         </span>
