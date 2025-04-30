@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Pages.css';
-import {Form } from 'react-bootstrap';
+import {Button, Form } from 'react-bootstrap';
+import genResponse from './GPT';
+
 
 const QTYPEAANSWER = [
     "Strongly disagree",
@@ -19,8 +21,26 @@ export function BasicQuestions(): React.JSX.Element{
         const [answer5, setAnswer5] = useState<string>(QTYPEAANSWER[0]);
         const [answer6, setAnswer6] = useState<string>(QTYPEAANSWER[0]);
         const [answer7, setAnswer7] = useState<string>(QTYPEAANSWER[0]);
+        const [response, setResponse]=useState<string>("");
         const [progress,setProgress]=useState<number>(0)
-        function UpdateProgress(){
+        // eslint-disable-next-line no-template-curly-in-string
+        const basic_answers=['I would like to develop new medicine: ${answer1}','I would like to write books or plays: ${answer2}',
+        // eslint-disable-next-line no-template-curly-in-string
+        'I would like to install software across computers on a large network: ${answer3}'
+        // eslint-disable-next-line no-template-curly-in-string
+        ,'I would like to study ways to reduce water pollution: ${answer4}'
+        // eslint-disable-next-line no-template-curly-in-string
+        ,'I would like to repair household appliances: ${answer5}','I would like to compose or arrange music: ${answer6}',
+        // eslint-disable-next-line no-template-curly-in-string
+        'I would like to manage a department in a large company: ${answer7}'];
+        async function generateReportForUser() {
+            const userResponses=basic_answers.join();
+            const result = await genResponse(userResponses);
+            console.log(result); 
+            setResponse(result); 
+        }
+  
+    function UpdateProgress(){
             setProgress(progress+1);
             console.log(progress);
           }
@@ -157,8 +177,10 @@ export function BasicQuestions(): React.JSX.Element{
                         ))}
                 </Form.Group>
                 <progress value={progress} max={7} ></progress>
-                <div className='Ready' hidden={progress<=7}>Ready to Submit?</div>
+                <div className='Ready' hidden={progress<=6}>Ready to Submit?</div>
+                <Button hidden={progress<=6}onClick={generateReportForUser}>Submit</Button>
                 </div>
+                <div className='Response'> {response} </div>
             </div>    
         </span>
     )
