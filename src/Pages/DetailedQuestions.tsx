@@ -22,7 +22,6 @@ export function DetailedQuestions(): React.JSX.Element{
     function updateAnswer(event: React.ChangeEvent<HTMLTextAreaElement>){
         const {name, value} = event.target
         setResponse(prev => ({...prev, [name]: value}));
-        setProgress(progress+1);
     }
 
 
