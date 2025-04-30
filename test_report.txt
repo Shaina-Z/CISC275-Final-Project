@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (120 ms)
+  ✕ renders learn react link (130 ms)
 
   ● renders learn react link
 
@@ -36,6 +36,33 @@ FAIL src/App.test.tsx
           [36m<header[39m
             [33mclass[39m=[32m"App-header"[39m
           [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"Report-Page"[39m
+              [33mhidden[39m=[32m""[39m
+            [36m>[39m
+              [36m<span>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"Report-Page"[39m
+                [36m>[39m
+                  [36m<h1[39m
+                    [33mclass[39m=[32m"report-header"[39m
+                  [36m>[39m
+                    [0mYour Results: [0m
+                  [36m</h1>[39m
+                  [36m<p[39m
+                    [33mclass[39m=[32m"report-summary"[39m
+                  [36m>[39m
+                    [0mBased on your responses, you show strong preferences for analytical and creative roles. Careers in data science, design, or strategy might be great fits for your personality and interests.[0m
+                  [36m</p>[39m
+                  [36m<img[39m
+                    [33malt[39m=[32m"stockimage3"[39m
+                    [33mhidden[39m=[32m""[39m
+                    [33msrc[39m=[32m"stockimg3.png"[39m
+                    [33mstyle[39m=[32m"z-index: 8888; position: absolute; bottom: 60px; right: 20px; width: 160px; height: auto;"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</span>[39m
+            [36m</div>[39m
             [36m<div[39m
               [33mclass[39m=[32m"Basic-Questions"[39m
               [33mhidden[39m=[32m""[39m
@@ -138,33 +165,7 @@ FAIL src/App.test.tsx
                       [36m<div[39m
                         [33mclass[39m=[32m"form-check form-check-inline"[39m
                         [33mstyle[39m=[32m"color: white;"[39m
-                      [36m>[39m
-                        [36m<input[39m
-                          [33mclass[39m=[32m"form-check-input"[39m
-                          [33mid[39m=[32m"Question 1"[39m
-                          [33mname[39m=[32m"response1"[39m
-                          [33mtype[39m=[32m"radio"[39m
-                          [33mvalue[39m=[32m"Strongly disagree"[39m
-                        [36m/>[39m
-                        [36m<label[39m
-                          [33mclass[39m=[32m"form-check-label"[39m
-                          [33mfor[39m=[32m"Question 1"[39m
-                          [33mtitle[39m=[32m""[39m
-                        [36m>[39m
-                          [0mStrongly agree[0m
-                        [36m</label>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                    [36m<h3[39m
-                      [33mstyle[39m=[32m"color: white;"[39m
-                    [36m>[39m
-                      [0m2. I would like to write books or plays[0m
-                    [36m</h3>[39m
-                    [36m<div>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"form-check form-check-inline"[39m
-                        [33mstyle[39m=[32m"color: white;"[39m
-                      ...
+                    ...
 
        5 | test('renders learn react link', () => {
        6 |   render(<App />);
@@ -184,23 +185,24 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-------------------------|---------|----------|---------|---------|----------------------------------------------------------
-File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                        
-------------------------|---------|----------|---------|---------|----------------------------------------------------------
-All files               |   29.66 |     7.14 |   27.77 |   30.43 |                                                          
- src                    |   24.32 |       10 |    12.5 |   24.32 |                                                          
-  App.tsx               |   34.61 |    16.66 |   16.66 |   34.61 | 15,28-34,51-91                                           
-  index.tsx             |       0 |      100 |     100 |       0 | 7-19                                                     
-  reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10                                                     
- src/Pages              |   32.09 |        0 |   32.14 |   33.33 |                                                          
-  BasicQuestions.tsx    |   48.71 |      100 |   47.05 |   48.71 | 37-45,63-64,81-82,99-101,118-119,136-137,154-155,172-173 
-  DetailedQuestions.tsx |   22.58 |      100 |      10 |      25 | 18-24,37-72,192-197                                      
-  GPT.ts                |       0 |        0 |       0 |       0 | 4-26                                                     
-------------------------|---------|----------|---------|---------|----------------------------------------------------------
+------------------------|---------|----------|---------|---------|-----------------------------------------------------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                               
+------------------------|---------|----------|---------|---------|-----------------------------------------------------------------
+All files               |   30.23 |     6.25 |    28.2 |   30.95 |                                                                 
+ src                    |   24.39 |     8.33 |    12.5 |   24.39 |                                                                 
+  App.tsx               |   33.33 |     12.5 |   16.66 |   33.33 | 16,30-36,53-100                                                 
+  index.tsx             |       0 |      100 |     100 |       0 | 7-19                                                            
+  reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10                                                            
+ src/Pages              |   32.95 |        0 |   32.25 |   34.11 |                                                                 
+  BasicQuestions.tsx    |   47.61 |      100 |   44.44 |   47.61 | 29-30,53-61,79-80,97-98,115-117,134-135,152-153,170-171,188-189 
+  DetailedQuestions.tsx |   23.52 |      100 |    9.09 |    25.8 | 21-22,34-40,53-88,208-213                                       
+  GPT.ts                |       0 |        0 |       0 |       0 | 4-26                                                            
+  ReportPage.tsx        |     100 |      100 |     100 |     100 |                                                                 
+------------------------|---------|----------|---------|---------|-----------------------------------------------------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.018 s
+Time:        3.089 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
