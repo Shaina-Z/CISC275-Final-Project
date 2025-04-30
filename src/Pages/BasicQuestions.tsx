@@ -12,8 +12,24 @@ const QTYPEAANSWER = [
     "Strongly agree"
 ]
 
+interface basicStates {
+    notBasic: boolean;
+    setBasic: React.Dispatch<React.SetStateAction<boolean>>;
+    notReport: boolean;
+    setReport: React.Dispatch<React.SetStateAction<boolean>>;
+  }
 
-export function BasicQuestions(): React.JSX.Element{
+export function BasicQuestions({
+    notBasic,
+    setBasic,
+    notReport,
+    setReport
+}: basicStates): React.JSX.Element{
+        const SubmitButton = () => {
+            setBasic(!notBasic); 
+            setReport(!notReport);
+        }
+
         const [answer1, setAnswer1] = useState<string>(QTYPEAANSWER[0]);
         const [answer2, setAnswer2] = useState<string>(QTYPEAANSWER[0]);
         const [answer3, setAnswer3] = useState<string>(QTYPEAANSWER[0]);
@@ -177,8 +193,8 @@ export function BasicQuestions(): React.JSX.Element{
                         ))}
                 </Form.Group>
                 <progress value={progress} max={7} ></progress>
-                <div className='Ready' hidden={progress<=6}>Ready to Submit?</div>
-                <Button hidden={progress<=6}onClick={generateReportForUser}>Submit</Button>
+                <Button onClick={SubmitButton} hidden={progress<=6}>Ready to Submit?</Button>
+                <Button hidden={progress<=6}onClick={generateReportForUser}>Generate report</Button>
                 </div>
                 <div className='Response'> {response} </div>
             </div>    
