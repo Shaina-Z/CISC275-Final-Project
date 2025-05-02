@@ -9,31 +9,33 @@ import genResponse from './GPT';
     setDetailed: React.Dispatch<React.SetStateAction<boolean>>;
     notReport: boolean;
     setReport: React.Dispatch<React.SetStateAction<boolean>>;
+    gptReport: string;
+    setGPTReport: React.Dispatch<React.SetStateAction<string>>;
  }
 
 export function DetailedQuestions({
     notDetailed,
     setDetailed,
     notReport,
-    setReport
+    setReport,
+    gptReport,
+    setGPTReport
 }: detailedStates): React.JSX.Element{
-    const SubmitButton = () => {
-        setDetailed(!notDetailed); 
-        setReport(!notReport);
-    }
+ 
     const [response, setResponse] = useState(
         { q1: "Type your answer here!", q2: "Type your answer here!", q3: "Type your answer here!",
             q4: "Type your answer here!", q5: "Type your answer here!", q6: "Type your answer here!",
             q7: "Type your answer here!"
         }
     );
-    const [gpt,setGPT]=useState("");
     const [progress,setProgress]=useState<number>(0);
     const answers=[response.q1,response.q2,response.q3,response.q4,response.q5,response.q6,response.q7];
     async function generateReportForUser() {
                 const result = await genResponse(answers.join());
                 console.log(result); 
-                setGPT(result);
+                setGPTReport(result);
+                setDetailed(!notDetailed); 
+                setReport(!notReport);
             }
     function updateAnswer(event: React.ChangeEvent<HTMLTextAreaElement>){
         const {name, value} = event.target
@@ -214,9 +216,7 @@ export function DetailedQuestions({
             >Next</Button>
         
             <progress value={progress} max={7} ></progress>
-            <Button onClick={SubmitButton} hidden={progress<=5}>Ready to Submit?</Button>
-        <Button hidden={progress<=5}onClick={generateReportForUser}>Generate Report</Button>
-        <div> {gpt} </div>
+        <Button hidden={progress<=5}onClick={generateReportForUser}>Ready to Submit?</Button>
         </span>
     )
 }

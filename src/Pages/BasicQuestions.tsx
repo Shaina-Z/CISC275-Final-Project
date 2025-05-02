@@ -17,18 +17,18 @@ interface basicStates {
     setBasic: React.Dispatch<React.SetStateAction<boolean>>;
     notReport: boolean;
     setReport: React.Dispatch<React.SetStateAction<boolean>>;
+    gptReport: string;
+    setGPTReport: React.Dispatch<React.SetStateAction<string>>;
   }
 
 export function BasicQuestions({
     notBasic,
     setBasic,
     notReport,
-    setReport
+    setReport,
+    gptReport,
+    setGPTReport
 }: basicStates): React.JSX.Element{
-        const SubmitButton = () => {
-            setBasic(!notBasic); 
-            setReport(!notReport);
-        }
 
         const [answer1, setAnswer1] = useState<string>(QTYPEAANSWER[0]);
         const [answer2, setAnswer2] = useState<string>(QTYPEAANSWER[0]);
@@ -37,7 +37,6 @@ export function BasicQuestions({
         const [answer5, setAnswer5] = useState<string>(QTYPEAANSWER[0]);
         const [answer6, setAnswer6] = useState<string>(QTYPEAANSWER[0]);
         const [answer7, setAnswer7] = useState<string>(QTYPEAANSWER[0]);
-        const [response, setResponse]=useState<string>("");
         const [progress,setProgress]=useState<number>(0)
         // eslint-disable-next-line no-template-curly-in-string
         const basic_answers=['I would like to develop new medicine: ${answer1}','I would like to write books or plays: ${answer2}',
@@ -53,7 +52,9 @@ export function BasicQuestions({
             const userResponses=basic_answers.join();
             const result = await genResponse(userResponses);
             console.log(result); 
-            setResponse(result); 
+            setGPTReport(result);
+            setBasic(!notBasic); 
+            setReport(!notReport);
         }
   
     function UpdateProgress(){
@@ -193,10 +194,8 @@ export function BasicQuestions({
                         ))}
                 </Form.Group>
                 <progress value={progress} max={7} ></progress>
-                <Button onClick={SubmitButton} hidden={progress<=6}>Ready to Submit?</Button>
-                <Button hidden={progress<=6}onClick={generateReportForUser}>Generate report</Button>
+                <Button hidden={progress<=6}onClick={generateReportForUser}>Ready to Submit?</Button>
                 </div>
-                <div className='Response'> {response} </div>
             </div>    
         </span>
     )

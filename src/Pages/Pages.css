@@ -12,7 +12,7 @@
 }
 
 .report-summary {
-    font-size: 1.2rem;
+    font-size: 0.75rem;
     color: white;
     width: 100%;
     max-width: 100%;
@@ -49,9 +49,7 @@
 .Ready{
     color: white;
 }
-.Response{
-    color:white;
-}
+
 .Detailed-Question{
     text-align: center;
 }
