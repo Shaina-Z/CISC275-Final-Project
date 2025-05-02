@@ -22,6 +22,7 @@ function App() {
     const [notBasic, setBasic] = useState<boolean>(true);
     const [notDetailed, setDetailed] = useState<boolean>(true);
     const [notReport, setReport] = useState<boolean>(true);
+    const [gptReport, setGPTReport] = useState<string>("");
 
   const [key, setKey] = useState<string>(keyData); //for api key input
   
@@ -71,13 +72,13 @@ function App() {
       <div hidden={isHome} className="fade-strip">Career Helpi Quiz</div>
       <header className="App-header">
         <div className="Report-Page" hidden={notReport}>
-          <ReportPage notReport={notReport} setReport={setReport}/>
+          <ReportPage notReport={notReport} setReport={setReport} gptReport={gptReport} setGPTReport={setGPTReport}/>
         </div>
         <div className="Basic-Questions" hidden={notBasic}>
-        <BasicQuestions notBasic={notBasic} setBasic={setBasic} notReport={notReport} setReport={setReport}/>
+        <BasicQuestions notBasic={notBasic} setBasic={setBasic} notReport={notReport} setReport={setReport} gptReport={gptReport} setGPTReport={setGPTReport}/>
         </div>
         <div className="Detailed-Questions" hidden={notDetailed}>
-        <DetailedQuestions notDetailed={notDetailed} setDetailed={setDetailed} notReport={notReport} setReport={setReport}/>
+        <DetailedQuestions notDetailed={notDetailed} setDetailed={setDetailed} notReport={notReport} setReport={setReport} gptReport={gptReport} setGPTReport={setGPTReport}/>
       </div>
         <p className ="basic" style= {{zIndex: 5}} hidden = {isHome}>Not sure where to start? Answer a few small questions to get some starting points on a career path.
         <Button style={{backgroundColor: 'darkblue'}}//Flips the visibility of the Basic and Home pages
