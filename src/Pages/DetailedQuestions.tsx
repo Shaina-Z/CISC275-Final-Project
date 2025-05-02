@@ -203,7 +203,7 @@ export function DetailedQuestions({
             </div>
 
             
-            <progress value={progress} max={6} ></progress>
+            <progress value={progress} max={7} ></progress>
             <br></br>
 
             <Button hidden = {current === 0}
@@ -215,7 +215,7 @@ export function DetailedQuestions({
             onClick={() => {nextQuestion(current);setProgress(progress+1);}}
             >Next</Button>
         
-            <progress value={progress} max={7} ></progress>
+           
         <Button hidden={progress<=5}onClick={generateReportForUser}>Ready to Submit?</Button>
         </span>
     )

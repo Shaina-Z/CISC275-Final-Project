@@ -1,6 +1,5 @@
 import './Pages.css';
 import stockImage3 from './stockimg3.png'
-import genResponse from './GPT';
 import usagi from './usagiwithglasses.png'
 
 interface reportStates {
