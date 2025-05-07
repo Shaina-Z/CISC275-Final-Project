@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import './Pages.css';
 import stockImage3 from './stockimg3.png'
 import usagi from './usagiwithglasses.png'
+import {Button, Form } from 'react-bootstrap';
 
 interface reportStates {
     notReport: boolean;
@@ -15,8 +17,10 @@ export function ReportPage({
     gptReport,
     setGPTReport
 }: reportStates): React.JSX.Element{
-   
-
+    const[response,setResponse]=useState<string>("");
+    function updateAnswer(event: React.ChangeEvent<HTMLTextAreaElement>){
+        setResponse(event.target.value);
+    }
     return(
         <span>
             <div className="Report-Page">
@@ -47,6 +51,21 @@ export function ReportPage({
                     width: '280px',
                     height: 'auto',
                 }}/>
+                 <div className = "chatResponse">
+                <Form.Group>
+                <Form.Label>Have any more questions? Ask our career Assistant here!</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
+                    name="chatbox"
+                    value={response}
+                    onChange={updateAnswer} />
+                </Form.Group>
+                <small>
+                {response.length} Characters
+                </small>
+            </div>
         </span>
+        
     );
 };
