@@ -19,11 +19,13 @@ export function ReportPage({
     setGPTReport
 }: reportStates): React.JSX.Element{
     const[chat,setChat]=useState<string>("");
+    const[response,setResponse]=useState<string>("");
     function updateAnswer(event: React.ChangeEvent<HTMLTextAreaElement>){
         setChat(event.target.value);
     }
-    function respond(){
-        
+    async function respond(){
+        const result = await chatResponse(chat);
+        setResponse(result);
     }
     return(
         <span>
@@ -44,6 +46,9 @@ export function ReportPage({
                 </Form.Group>
                 <Button onClick={respond}>Submit</Button>
             </div>
+            <p className="gpt-response">
+                    {response}
+                </p>
                 <img hidden={notReport}
                 src={stockImage3}
                 alt="stockimage3" 

@@ -26,7 +26,7 @@ async function genResponse(responses: string) {
     return "Error: Invalid API Key.";
 }
 };
-export async function chatResponse(responses: string) {
+export async function chatResponse(chats: string) {
     const APIKey = localStorage.getItem("MYKEY");
     if(APIKey == null){
         return("Error: You did not submit your API Key.")
@@ -37,7 +37,7 @@ export async function chatResponse(responses: string) {
     const openai = new OpenAI({apiKey: stringKey, dangerouslyAllowBrowser: true});
         const completion = await openai.chat.completions.create({
             messages: [{"role": "system", "content": "You are a helpful  career assistant."},
-            {"role": "user", "content": responses},],
+            {"role": "user", "content": "have a conversation with them" + chats},],
             
             model: "gpt-4o",
   })
