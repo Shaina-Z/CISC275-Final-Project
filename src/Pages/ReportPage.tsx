@@ -3,6 +3,7 @@ import './Pages.css';
 import stockImage3 from './stockimg3.png'
 import usagi from './usagiwithglasses.png'
 import {Button, Form } from 'react-bootstrap';
+import chatResponse from './GPT'
 
 interface reportStates {
     notReport: boolean;
@@ -21,6 +22,9 @@ export function ReportPage({
     function updateAnswer(event: React.ChangeEvent<HTMLTextAreaElement>){
         setChat(event.target.value);
     }
+    function respond(){
+        
+    }
     return(
         <span>
             
@@ -38,8 +42,7 @@ export function ReportPage({
                     value={chat}
                     onChange={updateAnswer} />
                 </Form.Group>
-                <Button>Submit</Button>
-                
+                <Button onClick={respond}>Submit</Button>
             </div>
                 <img hidden={notReport}
                 src={stockImage3}
