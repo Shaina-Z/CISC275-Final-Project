@@ -203,7 +203,7 @@ export function DetailedQuestions({
             </div>
 
             
-            <progress value={progress} max={7} ></progress>
+            <progress value={progress} max={6} ></progress>
             <br></br>
 
             <Button hidden = {current === 0}
