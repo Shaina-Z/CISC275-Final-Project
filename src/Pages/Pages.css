@@ -10,7 +10,9 @@
     font-size: 2rem;
     white-space: nowrap;     
 }
-
+.chatbox{
+    font-size: 2rem;
+}
 .report-summary {
     font-size: 0.75rem;
     color: white;

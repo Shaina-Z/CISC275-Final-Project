@@ -17,17 +17,30 @@ export function ReportPage({
     gptReport,
     setGPTReport
 }: reportStates): React.JSX.Element{
-    const[response,setResponse]=useState<string>("");
+    const[chat,setChat]=useState<string>("");
     function updateAnswer(event: React.ChangeEvent<HTMLTextAreaElement>){
-        setResponse(event.target.value);
+        setChat(event.target.value);
     }
     return(
         <span>
+            
             <div className="Report-Page">
             <h1 className="report-header">Your Results: </h1>
             <p className="report-summary">
                     {gptReport}
                 </p>
+                <div className="chatbox">
+                <Form.Group controlId="chatbox">
+                <Form.Label>Have any more questions? Ask our career Assistant here!</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
+                    value={chat}
+                    onChange={updateAnswer} />
+                </Form.Group>
+                <Button>Submit</Button>
+                
+            </div>
                 <img hidden={notReport}
                 src={stockImage3}
                 alt="stockimage3" 
@@ -40,6 +53,7 @@ export function ReportPage({
                     height: 'auto',
                 }}/>
             </div>
+           
             <img hidden={notReport}
                 src={usagi}
                 alt="usagi" 
@@ -51,20 +65,7 @@ export function ReportPage({
                     width: '280px',
                     height: 'auto',
                 }}/>
-                 <div className = "chatResponse">
-                <Form.Group>
-                <Form.Label>Have any more questions? Ask our career Assistant here!</Form.Label>
-                <Form.Control
-                    as="textarea"
-                    rows={3}
-                    name="chatbox"
-                    value={response}
-                    onChange={updateAnswer} />
-                </Form.Group>
-                <small>
-                {response.length} Characters
-                </small>
-            </div>
+                 
         </span>
         
     );
