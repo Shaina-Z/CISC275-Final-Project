@@ -225,6 +225,7 @@ export function DetailedQuestions({
             <Button hidden = {current === 6}
             onClick={() => {nextQuestion(current);setProgress(progress+1);}}
             >Next</Button>
+            <br></br>
         
         <Button hidden={progress<=5}onClick={generateReportForUser}>Ready to Submit?</Button>
         </span>

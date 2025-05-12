@@ -194,6 +194,7 @@ export function BasicQuestions({
                         ))}
                 </Form.Group>
                 <progress value={progress} max={7} ></progress>
+                <br></br>
                 <Button hidden={progress<=6}onClick={generateReportForUser}>Ready to Submit?</Button>
                 </div>
             </div>    
