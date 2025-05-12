@@ -1,9 +1,13 @@
 .Basic-Questions {
     text-align: center;
-    background-color: darkblue;
+    background-color: rgba(58, 17, 130, 0.75);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 1.0);
     border-radius: 30px;
     padding: 15px;
-    top: 67%;
+    right: 20%;
+    bottom: 20%;
+    z-index: 13;
+    position: fixed;
 }
 
 .report-header {
@@ -26,7 +30,7 @@
 }
 
   .Report-Page {
-    background-color: darkblue;
+    background-color: rgba(58, 17, 130, 0.75);
     border-radius: 20px;
     padding: 20px;
     margin: 10px;
@@ -41,6 +45,7 @@
     text-align: center;
     overflow: hidden;
     position: relative;
+    z-index: 11;
   }
 
 .Basic-Title{
@@ -51,7 +56,11 @@
 }
 
 .Detailed-Question{
-    text-align: center;
+    width: '80%';              
+    margin: '0 auto';
+    padding: '1rem';
+    position: 'relative';
+    zIndex: 15;
 }
 
 .header{
