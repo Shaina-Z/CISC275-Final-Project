@@ -27,34 +27,27 @@ FAIL src/App.test.tsx
               [33mstyle[39m=[32m"position: relative; overflow: hidden; margin: 0px auto;"[39m
             [36m>[39m
               [36m<div[39m
-                [33mclass[39m=[32m"Report-Page"[39m
                 [33mhidden[39m=[32m""[39m
               [36m>[39m
                 [36m<span>[39m
                   [36m<div[39m
-                    [33mclass[39m=[32m"Report-Page"[39m
+                    [33mclass[39m=[32m"loading-container"[39m
                   [36m>[39m
-                    [36m<h1[39m
-                      [33mclass[39m=[32m"report-header"[39m
-                    [36m>[39m
-                      [0mYour Results: [0m
-                    [36m</h1>[39m
-                    [36m<p[39m
-                      [33mclass[39m=[32m"report-summary"[39m
-                    [36m/>[39m
                     [36m<img[39m
-                      [33malt[39m=[32m"stockimage3"[39m
-                      [33mhidden[39m=[32m""[39m
-                      [33msrc[39m=[32m"stockimg3.png"[39m
-                      [33mstyle[39m=[32m"z-index: 8888; position: absolute; bottom: 60px; right: 20px; width: 120px; height: auto;"[39m
+                      [33malt[39m=[32m"Loading..."[39m
+                      [33msrc[39m=[32m"time-9132_256.gif"[39m
                     [36m/>[39m
                   [36m</div>[39m
-                  [36m<img[39m
-                    [33malt[39m=[32m"usagi"[39m
-                    [33mhidden[39m=[32m""[39m
-                    [33msrc[39m=[32m"usagiwithglasses.png"[39m
-                    [33mstyle[39m=[32m"z-index: 8889; position: fixed; bottom: 80px; left: 30px; width: 280px; height: auto;"[39m
-                  [36m/>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"report-image"[39m
+                  [36m>[39m
+                    [36m<img[39m
+                      [33malt[39m=[32m"usagi"[39m
+                      [33mhidden[39m=[32m""[39m
+                      [33msrc[39m=[32m"usagiwithglasses-removebg-preview.png"[39m
+                      [33mstyle[39m=[32m"z-index: 10000; position: fixed; width: 200px; height: 200px; top: 205px; left: 130px;"[39m
+                    [36m/>[39m
+                  [36m</div>[39m
                 [36m</span>[39m
               [36m</div>[39m
               [36m<div[39m
@@ -157,7 +150,14 @@ FAIL src/App.test.tsx
                           [36m</label>[39m
                         [36m</div>[39m
                         [36m<div[39m
-                          [33mclass[39m=[32m"form-ch...
+                          [33mclass[39m=[32m"form-check form-check-inline"[39m
+                          [33mstyle[39m=[32m"color: white;"[39m
+                        [36m>[39m
+                          [36m<input[39m
+                            [33mclass[39m=[32m"form-check-input"[39m
+                            [33mid[39m=[32m"Question 1"[39m
+                            [33mname[39m=[32m"response1"[39m
+               ...
 
        5 | test('renders learn react link', () => {
        6 |   render(<App />);
@@ -180,21 +180,21 @@ FAIL src/App.test.tsx
 ------------------------|---------|----------|---------|---------|-----------------------------------------------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                         
 ------------------------|---------|----------|---------|---------|-----------------------------------------------------------
-All files               |   28.57 |     6.25 |   29.72 |   29.26 |                                                           
+All files               |    28.8 |       15 |   29.72 |    29.5 |                                                           
  src                    |   26.19 |     8.33 |    12.5 |   26.19 |                                                           
-  App.tsx               |   35.48 |     12.5 |   16.66 |   35.48 | 15,31-37,84-120                                           
+  App.tsx               |   35.48 |     12.5 |   16.66 |   35.48 | 15,30-36,83-119                                           
   index.tsx             |       0 |      100 |     100 |       0 | 7-19                                                      
   reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10                                                      
- src/Pages              |   29.76 |        0 |   34.48 |   30.86 |                                                           
-  BasicQuestions.tsx    |      45 |      100 |   47.05 |      45 | 52-62,80-81,98-99,116-118,135-136,153-154,171-172,189-190 
-  DetailedQuestions.tsx |   18.75 |      100 |      10 |   20.68 | 34-42,55-90,221-226                                       
+ src/Pages              |   30.12 |       25 |   34.48 |   31.25 |                                                           
+  BasicQuestions.tsx    |   46.15 |      100 |   47.05 |   46.15 | 53-62,80-81,98-99,116-118,135-136,153-154,171-172,189-190 
+  DetailedQuestions.tsx |   18.75 |      100 |      10 |   20.68 | 34-42,55-90,293-298                                       
   GPT.ts                |       0 |        0 |       0 |       0 | 4-26                                                      
-  ReportPage.tsx        |     100 |      100 |     100 |     100 |                                                           
+  ReportPage.tsx        |     100 |       50 |     100 |     100 | 20-35                                                     
 ------------------------|---------|----------|---------|---------|-----------------------------------------------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.228 s
+Time:        3.211 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
