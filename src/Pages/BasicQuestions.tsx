@@ -27,7 +27,7 @@ export function BasicQuestions({
     notReport,
     setReport,
     gptReport,
-    setGPTReport
+    setGPTReport,
 }: basicStates): React.JSX.Element{
 
         const [answer1, setAnswer1] = useState<string>(QTYPEAANSWER[0]);
@@ -48,13 +48,13 @@ export function BasicQuestions({
         ,'I would like to repair household appliances: ${answer5}','I would like to compose or arrange music: ${answer6}',
         // eslint-disable-next-line no-template-curly-in-string
         'I would like to manage a department in a large company: ${answer7}'];
+
         async function generateReportForUser() {
-            const userResponses=basic_answers.join();
-            const result = await genResponse(userResponses);
-            console.log(result); 
-            setGPTReport(result);
             setBasic(!notBasic); 
             setReport(!notReport);
+            const userResponses=basic_answers.join();
+            const result = await genResponse(userResponses);
+            setGPTReport(result);
         }
   
     function UpdateProgress(){
@@ -195,7 +195,7 @@ export function BasicQuestions({
                 </Form.Group>
                 <progress value={progress} max={7} ></progress>
                 <br></br>
-                <Button hidden={progress<=6}onClick={generateReportForUser}>Ready to Submit?</Button>
+                <Button hidden={progress<=6}onClick={generateReportForUser} style={{backgroundColor: 'rgb(58, 17, 130)'}}>Ready to Submit?</Button>
                 </div>
             </div>    
         </span>

@@ -22,7 +22,6 @@ function App() {
     const [notDetailed, setDetailed] = useState<boolean>(true);
     const [notReport, setReport] = useState<boolean>(true);
     const [gptReport, setGPTReport] = useState<string>("");
-    // const [notLoading, setLoading] = useState<boolean>(true);
 
   const [key, setKey] = useState<string>(keyData); //for api key input
   
@@ -56,7 +55,7 @@ function App() {
         style={{
           position: 'relative', overflow: 'hidden', margin: '0 auto',
         }}>
-          <div className="Report-Page" hidden={notReport}>
+          <div hidden={notReport}>
           <ReportPage notReport={notReport} setReport={setReport} gptReport={gptReport} setGPTReport={setGPTReport}/>
         </div>
         <div className="Basic-Questions" hidden={notBasic}>
