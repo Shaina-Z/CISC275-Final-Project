@@ -100,7 +100,18 @@ export function DetailedQuestions({
             <div className = "Detailed-Question" hidden = {question.dq1}>
                 <Form.Group controlId="formQuestion1">
                 <Form.Label>What kind of work environment sounds most appealing to you?</Form.Label>
-                <Form.Control
+                <Form.Control style={{
+                    width: '80%',
+                    maxWidth: '500px',
+                    margin: '0 auto',
+                    padding: '2rem',
+                    position: 'relative',
+                    zIndex: 1,
+                    color: 'white',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    borderRadius: '8px',
+                    textAlign: 'left',
+                    }}
                     as="textarea"
                     rows={3}
                     name="q1"
