@@ -100,7 +100,18 @@ export function DetailedQuestions({
             <div className = "Detailed-Question" hidden = {question.dq1}>
                 <Form.Group controlId="formQuestion1">
                 <Form.Label>What kind of work environment sounds most appealing to you?</Form.Label>
-                <Form.Control
+                <Form.Control style={{
+                    width: '80%',
+                    maxWidth: '500px',
+                    margin: '0 auto',
+                    padding: '2rem',
+                    position: 'relative',
+                    zIndex: 1,
+                    color: 'white',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    borderRadius: '8px',
+                    textAlign: 'left',
+                    }}
                     as="textarea"
                     rows={3}
                     name="q1"
@@ -116,6 +127,18 @@ export function DetailedQuestions({
                 <Form.Group controlId="formQuestion2">
                 <Form.Label>What kinds of problems do you enjoy solving?</Form.Label>
                 <Form.Control
+                style={{
+                    width: '80%',
+                    maxWidth: '500px',
+                    margin: '0 auto',
+                    padding: '2rem',
+                    position: 'relative',
+                    zIndex: 1,
+                    color: 'white',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    borderRadius: '8px',
+                    textAlign: 'left',
+                    }}
                     as="textarea"
                     rows={3}
                     name="q2"
@@ -131,6 +154,18 @@ export function DetailedQuestions({
                 <Form.Group controlId="formQuestion3">
                 <Form.Label>Do you care more about the kind of work you do than the pay?</Form.Label>
                 <Form.Control
+                style={{
+                    width: '80%',
+                    maxWidth: '500px',
+                    margin: '0 auto',
+                    padding: '2rem',
+                    position: 'relative',
+                    zIndex: 1,
+                    color: 'white',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    borderRadius: '8px',
+                    textAlign: 'left',
+                    }}
                     as="textarea"
                     rows={3}
                     name="q3"
@@ -146,6 +181,18 @@ export function DetailedQuestions({
                 <Form.Group controlId="formQuestion4">
                 <Form.Label>When faced with a problem, how do you tend to respond, either instinctively or analytically?</Form.Label>
                 <Form.Control
+                style={{
+                    width: '80%',
+                    maxWidth: '500px',
+                    margin: '0 auto',
+                    padding: '2rem',
+                    position: 'relative',
+                    zIndex: 1,
+                    color: 'white',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    borderRadius: '8px',
+                    textAlign: 'left',
+                    }}
                     as="textarea"
                     rows={3}
                     name="q4"
@@ -161,6 +208,18 @@ export function DetailedQuestions({
                 <Form.Group controlId="formQuestion5">
                 <Form.Label>What kind of learning or training appeals to you most?</Form.Label>
                 <Form.Control
+                style={{
+                    width: '80%',
+                    maxWidth: '500px',
+                    margin: '0 auto',
+                    padding: '2rem',
+                    position: 'relative',
+                    zIndex: 1,
+                    color: 'white',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    borderRadius: '8px',
+                    textAlign: 'left',
+                    }}
                     as="textarea"
                     rows={3}
                     name="q5"
@@ -176,6 +235,18 @@ export function DetailedQuestions({
                 <Form.Group controlId="formQuestion5">
                 <Form.Label>If you had unlimited time and resources, what type of project would you love to start?</Form.Label>
                 <Form.Control
+                style={{
+                    width: '80%',
+                    maxWidth: '500px',
+                    margin: '0 auto',
+                    padding: '2rem',
+                    position: 'relative',
+                    zIndex: 1,
+                    color: 'white',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    borderRadius: '8px',
+                    textAlign: 'left',
+                    }}
                     as="textarea"
                     rows={3}
                     name="q6"
@@ -191,6 +262,18 @@ export function DetailedQuestions({
                 <Form.Group controlId="formQuestion5">
                 <Form.Label>What would make your work feel meaningful or fulfilling?</Form.Label>
                 <Form.Control
+                style={{
+                    width: '80%',
+                    maxWidth: '500px',
+                    margin: '0 auto',
+                    padding: '2rem',
+                    position: 'relative',
+                    zIndex: 1,
+                    color: 'white',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    borderRadius: '8px',
+                    textAlign: 'left',
+                    }}
                     as="textarea"
                     rows={3}
                     name="q7"
@@ -206,16 +289,15 @@ export function DetailedQuestions({
             <progress value={progress} max={6} ></progress>
             <br></br>
 
-            <Button hidden = {current === 0}
+            <Button hidden = {current === 0} style={{backgroundColor: 'rgb(58, 17, 130)'}}
             onClick={() => {prevQuestion(current);setProgress(progress-1);}}
             >Back</Button>
             
 
-            <Button hidden = {current === 6}
+            <Button hidden = {current === 6} style={{backgroundColor: 'rgb(58, 17, 130)'}}
             onClick={() => {nextQuestion(current);setProgress(progress+1);}}
             >Next</Button>
-        
-        <Button hidden={progress<=5}onClick={generateReportForUser}>Ready to Submit?</Button>
+        <Button hidden={progress<=5}onClick={generateReportForUser} style={{backgroundColor: 'rgb(58, 17, 130)'}}>Ready to Submit?</Button>
         </span>
     )
 }
