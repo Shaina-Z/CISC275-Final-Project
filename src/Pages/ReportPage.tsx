@@ -19,8 +19,13 @@ export function ReportPage({
     setGPTReport,
 }: reportStates): React.JSX.Element{
     const [chat,setChat] = useState<string>("")
+    const [response,setResponse]=useState<string>("")
     function updateChat(event: React.ChangeEvent<HTMLTextAreaElement>){
         setChat(event.target.value);
+    }
+    async function submitChat() {
+        const result = await chatResponse(chat);
+        setResponse(result)
     }
     return(
         <span>
@@ -45,14 +50,16 @@ export function ReportPage({
                     {gptReport}
                 </p>
                 <Form.Group controlId="chatbox">
-                <Form.Label>Have more questions?a ask our career bot here!</Form.Label>
+                <Form.Label>Have more questions? ask our career bot here!</Form.Label>
                 <Form.Control
                     as="textarea"
                     rows={3}
-                    name="q3"
+                    name="chatbox"
                     value={chat}
                     onChange={updateChat} />
                 </Form.Group>
+                <Button onClick={submitChat}>Submit</Button>
+                {response}
                 <small></small>
             </div> : null}
         </span>
