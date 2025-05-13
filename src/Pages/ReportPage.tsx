@@ -2,6 +2,8 @@ import { useState } from 'react';
 import './Pages.css';
 import usagi from './usagiwithglasses-removebg-preview.png';
 import hourglass from './time-9132_256.gif';
+import {Button, Form } from 'react-bootstrap';
+import chatResponse from './GPT'
 
 interface reportStates {
     notReport: boolean;
@@ -16,6 +18,10 @@ export function ReportPage({
     gptReport,
     setGPTReport,
 }: reportStates): React.JSX.Element{
+    const [chat,setChat] = useState<string>("")
+    function updateChat(event: React.ChangeEvent<HTMLTextAreaElement>){
+        setChat(event.target.value);
+    }
     return(
         <span>
             {gptReport === "" ? <div className='loading-container'>
@@ -38,6 +44,16 @@ export function ReportPage({
             <p className="report-summary">
                     {gptReport}
                 </p>
+                <Form.Group controlId="chatbox">
+                <Form.Label>Have more questions?a ask our career bot here!</Form.Label>
+                <Form.Control
+                    as="textarea"
+                    rows={3}
+                    name="q3"
+                    value={chat}
+                    onChange={updateChat} />
+                </Form.Group>
+                <small></small>
             </div> : null}
         </span>
         
