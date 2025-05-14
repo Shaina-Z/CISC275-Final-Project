@@ -31,11 +31,11 @@ export function DetailedQuestions({
     const [progress,setProgress]=useState<number>(0);
     const answers=[response.q1,response.q2,response.q3,response.q4,response.q5,response.q6,response.q7];
     async function generateReportForUser() {
+                setDetailed(!notDetailed); 
+                setReport(!notReport);
                 const result = await genResponse(answers.join());
                 console.log(result); 
                 setGPTReport(result);
-                setDetailed(!notDetailed); 
-                setReport(!notReport);
             }
     function updateAnswer(event: React.ChangeEvent<HTMLTextAreaElement>){
         const {name, value} = event.target
