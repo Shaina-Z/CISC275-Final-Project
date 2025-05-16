@@ -1,6 +1,8 @@
 import './Pages.css';
 import usagi from './usagiwithglasses-removebg-preview.png';
 import hourglass from './time-9132_256.gif';
+import Markdown from 'react-markdown'
+
 
 interface reportStates {
     notReport: boolean;
@@ -35,7 +37,7 @@ export function ReportPage({
             {gptReport !== "" ? <div className="Report-Page">
             <h1 className="report-header">Your Results: </h1>
             <p className="report-summary">
-                    {gptReport}
+                    <Markdown>{gptReport}</Markdown>
                 </p>
             </div> : null}
         </span>
