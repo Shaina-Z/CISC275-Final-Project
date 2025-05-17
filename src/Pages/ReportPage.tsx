@@ -61,7 +61,7 @@ export function ReportPage({
                     onChange={updateChat} />
                 </Form.Group>
                 <Button onClick={submitChat}>Submit</Button>
-                {response}
+                <Markdown>{response}</Markdown>
                 <small></small>
             </div> : null}
         </span>
