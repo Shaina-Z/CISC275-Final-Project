@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Pages.css';
 import usagi from './usagiwithglasses-removebg-preview.png';
 import hourglass from './time-9132_256.gif';
-import Markdown from 'react-markdown'
+import Markdown from 'react-markdown';
 
 import {Button, Form } from 'react-bootstrap';
 import chatResponse from './GPT'
