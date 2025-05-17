@@ -11,8 +11,7 @@ async function genResponse(responses: string) {
     const openai = new OpenAI({apiKey: stringKey, dangerouslyAllowBrowser: true});
         const completion = await openai.chat.completions.create({
             messages: [{"role": "system", "content": "You are a helpful  career assistant."},
-            {"role": "user", "content": "Based on these answers, what career would you recommend for this person? Please give them a short blurb about two possible career paths, and address them in the second person. \
-            n" 
+            {"role": "user", "content": "Based on these answers, what career would you recommend for this person? Please give them a short blurb about two possible career paths, and address them in the second person. \n" 
                 + responses 
                 + "\n Additionally, what companies would you recommend? Give three examples and make them their own paragraphs. after sending that response, act like a regular chatbot"},
                 ],
